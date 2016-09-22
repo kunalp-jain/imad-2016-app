@@ -1,11 +1,11 @@
 body {
     font-family: courier;
     background-color: red;
-    margin-top: 60px;
+    margin-top: 100px
 }
 
 .center {
-    text-align: left;
+    text-align: right;
 }
 
 .text-big {
