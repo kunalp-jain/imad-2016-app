@@ -9,19 +9,19 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-
+app.get('/ui/style.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
+});
 
 app.get('/ui/theme.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'theme.css'));
 });
 
-app.get('/ui/intro', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'introductin.html'));
+app.get('/ui/introduction', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'introduction.html'));
 });
 
-app.get('/ui/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
-});
+
 
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
