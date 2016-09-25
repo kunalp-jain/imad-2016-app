@@ -1,5 +1,4 @@
-var nameinput=getElementById('name');
-var name=nameinput.value;
+
 var submit=getElementById('submit-btn');
 submit.onclick=function()
 {
@@ -23,5 +22,7 @@ submit.onclick=function()
 		}
 	}
 };
+var nameinput=getElementById('name');
+var name=nameinput.value;
 request.open('GET',url+name,true);
 request.send(null);
