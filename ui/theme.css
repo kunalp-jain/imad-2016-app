@@ -1,0 +1,31 @@
+body {
+	
+    font-family: sans-serif;
+    
+    margin-top: 5x;
+	 background-image: url(back.jpg);
+	 
+
+}
+img{
+	width:304px;height:228px;
+	 float: right;
+	 margin:80 80;
+}
+ p {color:#473C37;
+    margin-top:20px;
+ font-family:bold;
+		
+ 		border: 2px solid black;
+		border-radius:5px;
+		border-left:25px solid black;
+		width:250px;
+		font-size:20px;
+ } 
+ .intro{
+	 margin-left: 500px;
+	 margin-top:20px;
+ }
+ .down{
+	 margin-top:200px;
+ }
