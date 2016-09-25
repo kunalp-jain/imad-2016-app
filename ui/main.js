@@ -24,5 +24,6 @@ submit.onclick=function()
 };
 var nameinput=getElementById('name');
 var name=nameinput.value;
-request.open('GET',url+name,true);
+request.open('GET','http://githubashutoshsoni.imad.hasura-app.io/submit-name='+name,true);
 request.send(null);
+};
