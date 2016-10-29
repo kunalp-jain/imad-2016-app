@@ -14,7 +14,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 
 var names[];
-app.get('/submit-name', function (req, res) {
+app.get('/comment', function (req, res) {
     var name=req.query.name;
     names.push(name);
 res.send(JSON.strigify(names));
