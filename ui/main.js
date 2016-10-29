@@ -1,5 +1,5 @@
 
-var submit=getElementById('submit-btn');
+var submit=getElementById('comment');
 submit.onclick=function()
 {
 	var request= new XMLHttpRequest();
