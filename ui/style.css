@@ -38,12 +38,12 @@ p {
     
 }
 h3{
-  max-width:auto;
+  width:100px;
   background-color: grey;
   border: 5px solid black;
 }
 .container {
-    max-width:auto;
+    max-width: 800px;
     margin: 0 auto;
     color: white;
     font-family: sans-serif;
