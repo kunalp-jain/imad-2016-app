@@ -5,7 +5,10 @@ body {
     background-image: url("https://wallpaperscraft.com/image/dubai_uae_buildings_skyscrapers_night_96720_1920x1080.jpg");
 
 }
-
+p {
+    background-color:black;
+    color:white;
+}
 
 .center {
     text-align: center;
