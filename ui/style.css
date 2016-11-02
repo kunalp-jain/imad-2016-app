@@ -8,6 +8,7 @@ body {
 p {
     max-width:auto;
     background-color:black;
+    font-family: sans-serif;
     color:white;
 }
 
@@ -38,7 +39,7 @@ p {
 }
 h3{
   width:100px;
-  background-color: silver;
+  background-color: grey;
   border: 5px solid black;
 }
 .container {
