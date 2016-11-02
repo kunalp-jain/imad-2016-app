@@ -38,7 +38,7 @@ p {
     
 }
 h3{
-  width:100px;
+  max-width:150px;
   background-color: grey;
   border: 5px solid black;
 }
