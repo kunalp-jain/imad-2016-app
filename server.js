@@ -27,7 +27,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 
 
-app.get('/ui/bigdata', function (req, res) {
+app.get('/bigdata', function (req, res) {
   res.send("this is a big amount of text");
 });
 
