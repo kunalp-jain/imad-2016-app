@@ -27,3 +27,31 @@ submit.onclick = function () {
     request.send(null);
 
 };
+
+var th = document.getElementById('sub');
+th.onclick=function(){
+     var request = new XMLHttpRequest();
+
+    request.onreadystatechange = function () {
+      if (request.readyState === XMLHttpRequest.DONE) {
+          // Take some action
+          if (request.status === 200) {
+              
+              var bdata = request.responseText;
+              
+              
+              
+              var ul = document.getElementById('bigdata');
+              ul.innerHTML = bdata;
+          }
+      }
+        };
+
+    
+    var commentInput = document.getElementById('comment');
+    var comment = commentInput.value;
+    request.open('GET',"http://githubashutoshsoni.imad.hasura-app.io/bigdata", true);
+    request.send(null);
+};
+
+
