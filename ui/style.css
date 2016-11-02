@@ -50,6 +50,6 @@ h3{
 .pp{
     background-position: right top;
      background-attachment: fixed;
-     
+     border: 1px solid red;
     
 }
