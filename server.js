@@ -9,19 +9,22 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+
+
+var comments = [];
+app.get('/:submit-comment', function(req, res) { // /submit-name?name=xxxx
+  // Get the name from the request
+  var comment = req.query.comment;
+
+  comments.push(comment);
+  // JSON: Javascript Object Notation
+  res.send(JSON.stringify(comments));
+});
+
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
-
-var names[];
-app.get('/comment', function (req, res) {
-    var name=req.query.name;
-    names.push(name);
-res.send(JSON.strigify(names));
-
-});
-    
-    
 
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
@@ -31,8 +34,7 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-
-var port = 8080; // Use 8080 for local development because you might already have apache running on 80
-app.listen(8080, function () {
+var port = 8082; // Use 8080 for local development because you might already have apache running on 80
+app.listen(8082, function () {
   console.log(`IMAD course app listening on port ${port}!`);
 });
