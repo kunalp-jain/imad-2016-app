@@ -6,7 +6,7 @@ body {
 
 }
 p {
-    width:auto;
+    max-width:auto;
     background-color:black;
     color:white;
 }
