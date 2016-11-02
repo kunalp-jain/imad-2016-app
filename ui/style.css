@@ -44,7 +44,8 @@ h3{
     max-width: 800px;
     margin: 0 auto;
     
-    color: white;
+    background-color:black;
+    color:white;
     font-family: sans-serif;
     padding-left: 20px;
     padding-right: 20px;
