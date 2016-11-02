@@ -16,6 +16,10 @@ body {
     font-size: 300%;
 }
 
+.comment{
+    border-style: dotted;
+}
+
 .bold {
     font-weight: bold;
 }
