@@ -1,8 +1,10 @@
 body {
     font-family: verdana;
     margin-top: 60px;
-    
+
     background-image: url("https://wallpaperscraft.com/image/dubai_uae_buildings_skyscrapers_night_96720_1920x1080.jpg");
+
+
 
 }
 p {
@@ -15,9 +17,14 @@ p {
     font-weight: bold;
 }
 h3{
-    font-weight: bold;
-    line-height: 30px;
-    margin: 20px 10px 10px 10px;
+  max-width:200px;
+  background-color: grey;
+  border: 5px solid black;
+  font-weight: bold;
+  line-height: 30px;
+  margin: 20px 10px 10px 10px;
+  max-width: 100px;
+
 }
 
 .center {
@@ -29,34 +36,29 @@ h3{
     font-size: 300%;
 }
 
-.comment{
+#comment{
     border-style: dotted;
-    border: 1px solid red;
+
+    border: 5px solid black;
+    max-width: 200px;
 }
 
 .footer{
-  margin-top: 500px;
+  margin-top: 70px;
+
+
 }
 
 .img-medium {
     height: 200px;
-    
-}
-h3{
-  max-width:100px;
-  background-color: grey;
-  border: 5px solid black;
-  font-weight: bold;
-  line-height: 30px;
-  margin: 20px 10px 10px 10px;
-  max-width: 100px;
 
 }
+
 .container {
     max-width: 800px;
     margin: 0 auto;
     color: white;
     font-family: sans-serif;
     padding: 20px 20px 20px 20px;
-   
+
 }
