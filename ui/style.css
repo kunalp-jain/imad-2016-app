@@ -10,6 +10,14 @@ p {
     background-color:black;
     font-family: sans-serif;
     color:white;
+    line-height: 30px;
+    margin: 20px 10px 10px 10px;
+    font-weight: bold;
+}
+h3{
+    font-weight: bold;
+    line-height: 30px;
+    margin: 20px 10px 10px 10px;
 }
 
 .center {
@@ -26,9 +34,6 @@ p {
     border: 1px solid red;
 }
 
-.bold {
-    font-weight: bold;
-}
 .footer{
   margin-top: 500px;
 }
@@ -38,9 +43,14 @@ p {
     
 }
 h3{
-  max-width:150px;
+  max-width:100px;
   background-color: grey;
   border: 5px solid black;
+  font-weight: bold;
+  line-height: 30px;
+  margin: 20px 10px 10px 10px;
+  max-width: 100px;
+
 }
 .container {
     max-width: 800px;
@@ -49,5 +59,4 @@ h3{
     font-family: sans-serif;
     padding: 20px 20px 20px 20px;
    
-    
 }
