@@ -190,10 +190,7 @@ th.onclick=function(){
       }
         };
 
-    
-    var commentInput = document.getElementById('comment');
-    var comment = commentInput.value;
-    request.open('GET',"http://githubashutoshsoni.imad.hasura-app.io/bigdata", true);
+request.open('GET',"http://githubashutoshsoni.imad.hasura-app.io/bigdata", true);
     request.send(null);
 };
 
