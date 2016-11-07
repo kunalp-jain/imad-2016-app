@@ -149,14 +149,14 @@ submit.onclick = function () {
               for (var i=0; i< names.length; i++) {
                   list += '<li>' + names[i] + '</li>';
               }
-              var ul = document.getElementById('commentlist');
+              var ul = document.getElementById('commentlist1');
               ul.innerHTML = list;
           }
       }
         };
 
     
-    var commentInput = document.getElementById('comment');
+    var commentInput = document.getElementById('comment1');
     var comment = commentInput.value;
     request.open('GET', 'http://githubashutoshsoni.imad.hasura-app.io/submit-comment?comment=' + comment, true);
     request.send(null);
