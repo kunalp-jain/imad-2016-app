@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var config = {
-    user: 'githubashutoshsoni',
-    database: 'githubashutoshsoni',
+    user: 'coco98',
+    database: 'coco98',
     host: 'db.imad.hasura-app.io',
     port: '5432',
     password: process.env.DB_PASSWORD
@@ -16,7 +16,6 @@ var config = {
 
 var app = express();
 app.use(morgan('combined'));
-
 app.use(bodyParser.json());
 app.use(session({
     secret: 'someRandomSecretValue',
@@ -68,20 +67,17 @@ function createTemplate (data) {
     return htmlTemplate;
 }
 
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/Introduction', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'Introduction.html'));
-});
 
 function hash (input, salt) {
     // How do we create a hash?
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
     return ["pbkdf2", "10000", salt, hashed.toString('hex')].join('$');
 }
+
 
 app.get('/hash/:input', function(req, res) {
    var hashedString = hash(req.params.input, 'this-is-some-random-string');
@@ -233,32 +229,6 @@ app.get('/articles/:articleName', function (req, res) {
 
 app.get('/ui/:fileName', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', req.params.fileName));
-});
-
-
-var comments = [];
-app.get('/:submit-comment', function(req, res) { // /submit-name?name=xxxx
-  // Get the name from the request
-  var comment = req.query.comment;
-
-  comments.push(comment);
-  // JSON: Javascript Object Notation
-  res.send(JSON.stringify(comments));
-});
-
-
-app.get('/ui/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
-});
-
-
-app.get('/bigdata', function (req, res) {
-  res.send("this is a big amount of text");
-});
-
-
-app.get('/ui/main.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
 
