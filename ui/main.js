@@ -131,11 +131,6 @@ function loadArticles () {
 }
 
 
-// The first thing to do is to check if the user is logged in!
-loadLogin();
-
-// Now this is something that we could have directly done on the server-side using templating too!
-loadArticles();
 
 
 var submit = document.getElementById('submit_btn');
@@ -168,6 +163,7 @@ submit.onclick = function () {
 
 };
 
+
 var th = document.getElementById('sub');
 th.onclick=function(){
      var request = new XMLHttpRequest();
@@ -195,3 +191,8 @@ th.onclick=function(){
 };
 
 
+// The first thing to do is to check if the user is logged in!
+loadLogin();
+
+// Now this is something that we could have directly done on the server-side using templating too!
+loadArticles();
