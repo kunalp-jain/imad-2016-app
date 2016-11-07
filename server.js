@@ -289,8 +289,7 @@ app.get('/intro', function (req, res) {
         <script type="text/javascript" src="/ui/main.js">
         </script>
     </body>
-</html>
-`
+</html>`
   res.send(intro)
 });
 
