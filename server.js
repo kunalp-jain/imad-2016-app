@@ -232,7 +232,7 @@ app.get('/articles/:articleName', function (req, res) {
 });
 
 app.get('/intro', function (req, res) {
-    var intro =`<!doctype html>
+    var intro1 =`<!doctype html>
 <html>
     <head>
         <link href="/ui/style.css" rel="stylesheet" />
@@ -290,7 +290,7 @@ app.get('/intro', function (req, res) {
         </script>
     </body>
 </html>`
-  res.send(intro)
+  res.send(intro1)
 });
 
 
