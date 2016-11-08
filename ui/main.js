@@ -1,9 +1,8 @@
 function loadLoginForm () {
     var loginHtml = `
         <h2>Login/Register to unlock awesome features</h2>
-        <textarea id="username" rows="3" cols="20" placeholder="Enter your user name here"></textarea>
-        <textarea id="password" type="password" rows="3" cols="20" placeholder="Enter your password here"></textarea>
-
+<input type="text" id="username" placeholder="username" />
+        <input type="password" id="password" />
         <br/><br/>
         <input type="submit" id="login_btn" value="Login" />
         <input type="submit" id="register_btn" value="Register" />
