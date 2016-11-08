@@ -7,6 +7,10 @@ body {
 
 
 }
+.box{
+    width:30px;
+    height:20px;
+}
 p {
     max-width:250px;
     background-color:white;
