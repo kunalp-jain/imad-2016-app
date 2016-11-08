@@ -235,15 +235,34 @@ app.get('/ui/:fileName', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', req.params.fileName));
 });
 
-
 var comments = [];
-app.get('/:submit-comment', function(req, res) { // /submit-name?name=xxxx
+app.get('/:submit-comment-myintro', function(req, res) { // /submit-name?name=xxxx
   // Get the name from the request
-  var comment = req.query.comment;
+
+  var comment = req.body.comment;
+  if (req.session && req.session.auth && req.session.auth.userId) {
+      // First check if the article exists and get the article-id
+      pool.query(
+        "INSERT INTO comment (comment, article_id, user_id) VALUES ($1, $2)",
+          [req.body.comment,req.session.auth.userId],
+          function (err, result) {
+              if (err) {
+                  res.status(500).send(err.toString());
+              } else {
+                  res.status(200).send('Comment inserted!')
+              }
+          });     
+  } else {
+      res.status(403).send('Only logged in users can comment');
+      
+  }
 
   comments.push(comment);
   // JSON: Javascript Object Notation
   res.send(JSON.stringify(comments));
+  // Check if the user is logged in
+
+
 });
 
 
