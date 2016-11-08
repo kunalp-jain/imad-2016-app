@@ -8,8 +8,8 @@ body {
 
 }
 .box{
-    width:30px;
-    height:20px;
+    max-width:300px;
+    max-height:200px;
 }
 p {
     max-width:250px;
