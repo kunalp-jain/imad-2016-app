@@ -1,13 +1,11 @@
-
 function loadLoginForm () {
     var loginHtml = `
-        <h3>Login/Register to unlock awesome features</h3>
+        <h2>Login/Register to unlock awesome features</h2>
         <input type="text" id="username" placeholder="username" />
         <input type="password" id="password" />
         <br/><br/>
         <input type="submit" id="login_btn" value="Login" />
         <input type="submit" id="register_btn" value="Register" />
-        <
         `;
     document.getElementById('login_area').innerHTML = loginHtml;
     
@@ -42,7 +40,7 @@ function loadLoginForm () {
         var password = document.getElementById('password').value;
         console.log(username);
         console.log(password);
-        request.open('POST', '/login', true);
+        request.open('POST', 'http://githubashutoshsoni.imad.hasura-app.io/login', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
         submit.value = 'Logging in...';
@@ -102,7 +100,7 @@ function loadLogin () {
         }
     };
     
-    request.open('GET', '/check-login', true);
+    request.open('GET', 'http://githubashutoshsoni.imad.hasura-app.io/check-login', true);
     request.send(null);
 }
 
@@ -128,9 +126,10 @@ function loadArticles () {
         }
     };
     
-    request.open('GET', '/get-articles', true);
+    request.open('GET', 'http://githubashutoshsoni.imad.hasura-app.io/get-articles', true);
     request.send(null);
 }
+
 
 
 // The first thing to do is to check if the user is logged in!
@@ -138,3 +137,60 @@ loadLogin();
 
 // Now this is something that we could have directly done on the server-side using templating too!
 loadArticles();
+
+
+
+var submit = document.getElementById('submit_btn');
+submit.onclick = function () {
+
+        var request = new XMLHttpRequest();
+
+    request.onreadystatechange = function () {
+      if (request.readyState === XMLHttpRequest.DONE) {
+          // Take some action
+          if (request.status === 200) {
+              
+              var names = request.responseText;
+              names = JSON.parse(names);
+              var list = '';
+              for (var i=0; i< names.length; i++) {
+                  list += '<li>' + names[i] + '</li>';
+              }
+              var ul = document.getElementById('commentlist1');
+              ul.innerHTML = list;
+          }
+      }
+        };
+
+    
+    var commentInput = document.getElementById('comment1');
+    var comment = commentInput.value;
+    request.open('GET', 'http://githubashutoshsoni.imad.hasura-app.io/submit-comment?comment=' + comment, true);
+    request.send(null);
+
+};
+
+
+var th = document.getElementById('sub');
+th.onclick=function(){
+     var request = new XMLHttpRequest();
+
+    request.onreadystatechange = function () {
+      if (request.readyState === XMLHttpRequest.DONE) {
+          // Take some action
+          if (request.status === 200) {
+              
+              var bdata = request.responseText;
+              
+              
+              
+              var ul = document.getElementById('bigdata');
+              ul.innerHTML = bdata;
+          }
+      }
+        };
+
+request.open('GET',"http://githubashutoshsoni.imad.hasura-app.io/bigdata", true);
+    request.send(null);
+};
+
