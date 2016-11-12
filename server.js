@@ -77,6 +77,7 @@ app.post('/intro-comment-submit', function (req, res) {
              res.status(500).send(err.toString());
          } else {
              res.send('comment added  successfully');
+             console.log('yippie')
          }
       });
 
