@@ -67,25 +67,6 @@ function createTemplate (data) {
     `;
     return htmlTemplate;
 }
-app.post('/intro-comment-submit', function (req, res) {
-   // Check if the user is logged in
-   var comment=req.body.usercomment;
-   
-    if (req.session && req.session.auth && req.session.auth.userId) {
-      pool.query('INSERT INTO mycomment (comment) VALUES ($1)', [comment], function (err, result) {
-         if (err) {
-             res.status(500).send(err.toString());
-         } else {
-             res.send('comment added  successfully');
-             console.log('yippie')
-         }
-      });
-
-        
-    } else {
-        res.status(403).send('Only logged in users can comment');
-    }
-});
 
 
 app.get('/', function (req, res) {
@@ -256,4 +237,24 @@ app.get('/ui/:fileName', function (req, res) {
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
   console.log(`IMAD course app listening on port ${port}!`);
+});
+
+app.post('/intro-comment-submit', function (req, res) {
+   // Check if the user is logged in
+   var comment=req.body.usercomment;
+   
+    if (req.session && req.session.auth && req.session.auth.userId) {
+      pool.query('INSERT INTO mycomment (comment) VALUES ($1)', [comment], function (err, result) {
+         if (err) {
+             res.status(500).send(err.toString());
+         } else {
+             res.send('comment added  successfully');
+
+         }
+      });
+
+        
+    } else {
+        res.status(403).send('Only logged in users can comment');
+    }
 });
