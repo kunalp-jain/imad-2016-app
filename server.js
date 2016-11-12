@@ -281,7 +281,7 @@ app.get('/ui/main.js', function (req, res) {
 });
 
 var my_comments = [];
-app.get('/:introduction-submit-comment', function(req, res) { // /submit-name?name=xxxx
+app.get('/introduction-submit-comment', function(req, res) { // /submit-name?name=xxxx
   // Get the name from the request
   var comment = req.params.introduction-submit-comment;
 
