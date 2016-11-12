@@ -22,6 +22,17 @@ app.use(session({
     secret: 'someRandomSecretValue',
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
+var my_comments = [];
+app.get('/introduction-submit-comment', function(req, res) { // /submit-name?name=xxxx
+  // Get the name from the request
+  var comment = req.query.introduction-submit-comment;
+
+  my_comments.push(comment);
+  // JSON: Javascript Object Notation
+  res.send(JSON.stringify(my_comments));
+});
+
+
 
 function createTemplate (data) {
     var title = data.title;
@@ -278,16 +289,6 @@ app.get('/bigdata', function (req, res) {
 
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
-});
-
-var my_comments = [];
-app.get('/introduction-submit-comment', function(req, res) { // /submit-name?name=xxxx
-  // Get the name from the request
-  var comment = req.params.introduction-submit-comment;
-
-  my_comments.push(comment);
-  // JSON: Javascript Object Notation
-  res.send(JSON.stringify(my_comments));
 });
 
 
