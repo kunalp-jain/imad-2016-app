@@ -22,15 +22,17 @@ app.use(session({
     secret: 'someRandomSecretValue',
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
+
 var my_comments = [];
-app.get('/introduction-submit-comment', function(req, res) { // /submit-name?name=xxxx
+app.get('/:introduction-submit-comment', function(req, res) { // /submit-name?name=xxxx
   // Get the name from the request
-  var comment = req.query.introduction-submit-comment;
+  var comment = req.query.comment;
 
   my_comments.push(comment);
   // JSON: Javascript Object Notation
   res.send(JSON.stringify(my_comments));
 });
+
 
 
 
