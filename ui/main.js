@@ -170,7 +170,7 @@ submit.onclick = function () {
     
     var commentInput = document.getElementById('comment1');
     var comment = commentInput.value;
-    request.open('GET', 'http://githubashutoshsoni.imad.hasura-app.io/submit-comment-myintro?comment=' + comment, true);
+    request.open('GET', '/introduction-submit-comment?comment=' + comment, true);
     request.send(null);
 
 };
