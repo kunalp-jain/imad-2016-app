@@ -74,6 +74,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/ui/Introduction', function (req, res) {
+    var intro1= document.getElementById("intro");
+
   var Myintro=`<!doctype html>
 <html>
     <head>
@@ -126,6 +128,8 @@ app.get('/ui/Introduction', function (req, res) {
     </body>
 </html>
 `;
+intro1.innerHTML= Myintro;
+
 return Myintro;
 });
 
