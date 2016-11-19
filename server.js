@@ -73,10 +73,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/ui/Introduction', function (req, res) {
-    var intro1= document.getElementById("intro");
-
-  var Myintro=`<!doctype html>
+app.get('/ui/Introduction1', function (req, res) {
+    var Myintro=`<!doctype html>
 <html>
     <head>
         <link href="/ui/style.css" rel="stylesheet" />
