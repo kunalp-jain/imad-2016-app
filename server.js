@@ -74,7 +74,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/ui/Introduction1', function (req, res) {
-    var Myintro=`<!doctype html>
+ var htmlTemplate = `<!doctype html>
 <html>
     <head>
         <link href="/ui/style.css" rel="stylesheet" />
@@ -124,9 +124,9 @@ app.get('/ui/Introduction1', function (req, res) {
         <script type="text/javascript" src="/ui/main.js">
         </script>
     </body>
-</html>
-`;
-res.send(Myintro)
+</html>`;
+    return htmlTemplate;
+}
 });
 
 
