@@ -126,7 +126,7 @@ app.get('/ui/Introduction1', function (req, res) {
     </body>
 </html>`;
     return htmlTemplate;
-}
+
 });
 
 
