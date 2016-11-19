@@ -126,8 +126,6 @@ app.get('/ui/Introduction1', function (req, res) {
     </body>
 </html>
 `;
-intro1.innerHTML= Myintro;
-
 return Myintro;
 });
 
