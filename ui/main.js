@@ -1,97 +1,139 @@
-/*!
- * Modified version of the JavaScript for Bootstrap's docs (http://getbootstrap.com)
- * Copyright 2011-2014 Twitter, Inc.
- * Licensed under the Creative Commons Attribution 3.0 Unported License. For
- * details, see http://creativecommons.org/licenses/by/3.0/.
- * Used for the Start Bootstrap Resources Page Menu Bar (http://startbootstrap.com/bootstrap-resources/).
- */
-! function(a) {
-    a(function() {
-        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-            var b = document.createElement("style");
-            b.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}")), document.querySelector("head").appendChild(b)
-        } {
-            var c = a(window),
-                d = a(document.body);
-            a(".navbar").outerHeight(!0) + 10
+
+function loadLoginForm () {
+    var loginHtml = `
+        <h3>Login/Register to unlock awesome features</h3>
+        <input type="text" id="username" placeholder="username" />
+        <input type="password" id="password" />
+        <br/><br/>
+        <input type="submit" id="login_btn" value="Login" />
+        <input type="submit" id="register_btn" value="Register" />
+        `;
+    document.getElementById('login_area').innerHTML = loginHtml;
+    
+    // Submit username/password to login
+    var submit = document.getElementById('login_btn');
+    submit.onclick = function () {
+        // Create a request object
+        var request = new XMLHttpRequest();
+        
+        // Capture the response and store it in a variable
+        request.onreadystatechange = function () {
+          if (request.readyState === XMLHttpRequest.DONE) {
+              // Take some action
+              if (request.status === 200) {
+                  submit.value = 'Sucess!';
+              } else if (request.status === 403) {
+                  submit.value = 'Invalid credentials. Try again?';
+              } else if (request.status === 500) {
+                  alert('Something went wrong on the server');
+                  submit.value = 'Login';
+              } else {
+                  alert('Something went wrong on the server');
+                  submit.value = 'Login';
+              }
+              loadLogin();
+          }  
+          // Not done yet
+        };
+        
+        // Make the request
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        console.log(username);
+        console.log(password);
+        request.open('POST', '/login', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify({username: username, password: password}));  
+        submit.value = 'Logging in...';
+        
+    };
+    
+    var register = document.getElementById('register_btn');
+    register.onclick = function () {
+        // Create a request object
+        var request = new XMLHttpRequest();
+        
+        // Capture the response and store it in a variable
+        request.onreadystatechange = function () {
+          if (request.readyState === XMLHttpRequest.DONE) {
+              // Take some action
+              if (request.status === 200) {
+                  alert('User created successfully');
+                  register.value = 'Registered!';
+              } else {
+                  alert('Could not register the user');
+                  register.value = 'Register';
+              }
+          }
+        };
+        
+        // Make the request
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        console.log(username);
+        console.log(password);
+        request.open('POST', '/create-user', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify({username: username, password: password}));  
+        register.value = 'Registering...';
+    
+    };
+}
+
+function loadLoggedInUser (username) {
+    var loginArea = document.getElementById('login_area');
+    loginArea.innerHTML = `
+        <h3> Hi <i>${username}</i></h3>
+        <a href="/logout">Logout</a>
+    `;
+}
+
+function loadLogin () {
+    // Check if the user is already logged in
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                loadLoggedInUser(this.responseText);
+            } else {
+                loadLoginForm();
+            }
         }
-        d.scrollspy({
-            target: ".bs-docs-sidebar"
-        }), c.on("load", function() {
-            d.scrollspy("refresh")
-        }), a(".bs-docs-container [href=#]").click(function(a) {
-            a.preventDefault()
-        }), setTimeout(function() {
-            var b = a(".bs-docs-sidebar");
-            b.affix({
-                offset: {
-                    top: function() {
-                        var c = b.offset().top,
-                            d = parseInt(b.children(0).css("margin-top"), 10),
-                            e = a(".bs-docs-nav").height();
-                        return this.top = c - e - d
-                    },
-                    bottom: function() {
-                        var f = $('footer').outerHeight(true);
-                        return this.bottom = f + 30
-                    }
+    };
+    
+    request.open('GET', '/check-login', true);
+    request.send(null);
+}
+
+function loadArticles () {
+        // Check if the user is already logged in
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            var articles = document.getElementById('articles');
+            if (request.status === 200) {
+                var content = '<ul>';
+                var articleData = JSON.parse(this.responseText);
+                for (var i=0; i< articleData.length; i++) {
+                    content += `<li>
+                    <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
+                    (${articleData[i].date.split('T')[0]})</li>`;
                 }
-            })
-        }, 100), setTimeout(function() {
-            a(".bs-top").affix()
-        }, 100)
-    })
-}(jQuery);
+                content += "</ul>"
+                articles.innerHTML = content;
+            } else {
+                articles.innerHTML('Oops! Could not load all articles!')
+            }
+        }
+    };
+    
+    request.open('GET', '/get-articles', true);
+    request.send(null);
+}
 
-// Modal Customiaztion for Search Modal
 
-$(".modal-search").on('show.bs.modal', function() {
-    setTimeout(function() {
-        $(".modal-backdrop").addClass("modal-backdrop-fullscreen");
-    }, 0);
-});
-$(".modal-search").on('hidden.bs.modal', function() {
-    $(".modal-backdrop").addClass("modal-backdrop-fullscreen");
-});
-$('#searchModal').on('shown.bs.modal', function() {
-    $('#search_box').focus();
-})
+// The first thing to do is to check if the user is logged in!
+loadLogin();
 
-// Configure the Search Plugin
-
-$(function() {
-    $('#search-query').lunrSearch({
-        indexUrl: '/js/index.json', // url for the .json file containing search index data
-        results: '#search-results', // selector for containing search results element
-        template: '#search-results-template', // selector for Mustache.js template
-        titleMsg: '<h2>Search results<h2>', // message attached in front of results (can be empty)
-        emptyMsg: '<p>Nothing found.</p>' // shown message if search returns no results
-    });
-});
-
-// Twitter Widget
-! function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (!d.getElementById(id)) {
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://platform.twitter.com/widgets.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }
-}(document, "script", "twitter-wjs");
-
-// Google Analytics Tracking Script
-(function(i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r;
-    i[r] = i[r] || function() {
-        (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date();
-    a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m)
-})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-ga('create', 'UA-38417733-17', 'startbootstrap.com');
-ga('send', 'pageview');
+// Now this is something that we could have directly done on the server-side using templating too!
+loadArticles();
