@@ -1,307 +1,97 @@
-$(document).ready(function(){
-    var data = [
-  {
-    id:0,
-    title:"Tribute Page",
-    description:"A Tribute Page For Nandamuri Taraka Rama Rao.",
-    demoUrl:"https://codepen.io/vinaypuppal/full/JXJJaL/",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247988/fcc/tribute-page-ui.png",
-    category:"frontend"
-  },
-  {
-    id:1,
-    title:"Random Quote Generator",
-    description:"A simple quote generator that you can tweet and share.",
-    demoUrl:"http://codepen.io/vinaypuppal/full/dMdxKR/",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247983/fcc/random-quote-ui.png",
-    category:"frontend"
-  },
-  {
-    id:2,
-    title:"Wiki Search",
-    description:"A useful app to search Wikipedia articles.",
-    demoUrl:"https://codepen.io/vinaypuppal/full/WwzxxR/",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247982/fcc/wiki-search-ui.png",
-    category:"frontend"
-  },
-  {
-    id:3,
-    title:"Show Local Weather",
-    description:"A simple app to locate your current position and tell you the current weather.",
-    demoUrl:"https://codepen.io/vinaypuppal/full/NNLepx/",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247982/fcc/local-weather-ui.png",
-    category:"frontend"
-  },
-  {
-    id:4,
-    title:"Basic JavaScript Calculator",
-    description:"A simple calculator with the ability to chain operations.",
-    demoUrl:"https://codepen.io/vinaypuppal/full/mPYbOX/",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247982/fcc/js-calculator-ui.png",
-    category:"frontend"
-  },
-  {
-    id:5,
-    title:"Pomodoro Clock",
-    description:"Pomodoro timer featuring notification and audible alarm.",
-    demoUrl:"http://codepen.io/vinaypuppal/full/ZWNWxb/",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247982/fcc/pomodoro-clock-ui.png",
-    category:"frontend"
-  },
-  {
-    id:6,
-    title:"Twitch Streamers",
-    description:"A simple widget to show online status of Twitch streamers.",
-    demoUrl:"https://codepen.io/vinaypuppal/full/aNrMPK/",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247986/fcc/twitch-streams-ui.png",
-    category:"frontend"
-  },
-  {
-    id:7,
-    title:"Timestamp microservice",
-    description:"I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date",
-    demoUrl:"https://vp-timestamp.herokuapp.com",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465061495/fcc/timestamp-ui.png",
-    category:"backend"
-  },
-  {
-    id:8,
-    title:"Request Header Parser Microservice",
-    description:"I can get the IP address, language and operating system for my browser.",
-    demoUrl:"https://vp-header-parser.herokuapp.com",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465067738/fcc/header-parser-ui.png",
-    category:"backend"
-  },
-  {
-    id:9,
-    title:"URL Shortener Microservice",
-    description:"I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.",
-    demoUrl:"http://vp-shorturl.herokuapp.com",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465124936/fcc/ui-url-shortener.png",
-    category:"backend"
-  },
-  {
-    id:10,
-    title:"Image Search Abstraction Layer",
-    description:"I can get the image URLs, alt text and page urls for a set of images relating to a given search string.",
-    demoUrl:"https://vp-images.herokuapp.com",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465221550/fcc/img-search-ui.png",
-    category:"backend"
-  },
-  {
-    id:11,
-    title:"File MetaData Microservice",
-    description:"I can submit a FormData object that includes a file upload. And get File metadata as response",
-    demoUrl:"https://vp-file-metadata.herokuapp.com/",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465395641/file-metadata-ui_vxltxf.png",
-    category:"backend"
-  },
-  {
-    id:12,
-    title:"Youtube Search",
-    description:"A React App to search youtube videos",
-    demoUrl:"https://youtube-api.vinaypuppal.com/",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465248106/fcc/youtube-api.png",
-    category:"react"
-  },
-  {
-    id:13,
-    title:"Mediclco Website",
-    description:"A Landing page and Blog for Medicloc Startup Company",
-    demoUrl:"https://www.medicloc.com/",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247992/fcc/medicloc-ui.png",
-    category:"meteor"
-  },
-  {
-    id:14,
-    title:"Amplidudes",
-    description:"A Landing page and Alumni dashboard for ECE Branch, IT GGV",
-    demoUrl:"https://www.amplidudes.in/",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_300/v1465247989/fcc/amplidudes-ui.png",
-    category:"meteor"
-  },
-      {
-    id:15,
-    title:"Markdown Editor",
-    description:"A Github flavoured Markdown Editor built using React.js",
-    demoUrl:"http://codepen.io/vinaypuppal/full/jrMKpe/",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/v1466487853/markdown-editor-ui_lpusb2.png",
-    category:"react"
-  },
-  {
-    id:16,
-    title:"Tic-Tac-Toe Game",
-    description:"A Tic-Tac-Toe game with unbeatable AI created using Minimax Algorithm.",
-    demoUrl:"http://codepen.io/vinaypuppal/full/aZZGWQ/",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/v1466484035/tic-tac-toe-ui_suoxn1.png",
-    category:"frontend"
-  },
-  {
-    id:17,
-    title:"Simon Says Game",
-    description:"A classic Simon Says Game built for fun.",
-    demoUrl:"http://codepen.io/vinaypuppal/full/MejJZj/",
-    previewUrl:"https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,h_470/v1466486988/simon-says-game-ui_nyxr6d.png",
-    category:"frontend"
-  },
-  {
-   id:18,
-    title: 'FreeCodeCamp Leaderboard',
-    description: 'A list of Free Code Camp campers who\'ve earned the most brownie points in the past 30 days.',   demoUrl:'http://codepen.io/vinaypuppal/full/MeJqzJ/',
-    previewUrl:'https://res.cloudinary.com/vinaypuppal/image/upload/v1467570960/fcc/fcc-leaderboard-ui.png',
-    category: 'react'
-  },
-  {
-   id:19,
-    title: 'Recipe Book',
-    description: 'A list of Recipes that the user can create with name and ingredients.All Recipes are stored in users localstorage',   demoUrl:'http://codepen.io/vinaypuppal/live/pbPabb',
-    previewUrl:'https://res.cloudinary.com/vinaypuppal/image/upload/v1467571176/fcc/recipe-book-ui.png',
-    category: 'react'
-  }
-];
-
-  var frontend = data.filter(function(item){
-    return item.category === 'frontend';
-  });
-  
-  var backend =  data.filter(function(item){
-    return item.category === 'backend';
-  });
-  
-  var react =  data.filter(function(item){
-    return item.category === 'react';
-  });
-  
-   var meteor = data.filter(function(item){
-    return item.category === 'meteor';
-  });
-  
-  function removeActiveClass(){
-    $('.center').find('a').each(function(i,el){    if($(el).hasClass('active')){
-      $(el).removeClass('active');
-    }
-      
-    });
-  }
-  function removeOpenClass(){
-    $('.container').each(function(i,el){
-      if($(el).hasClass('open')){
-        $(el).removeClass('open');
-      }
+/*!
+ * Modified version of the JavaScript for Bootstrap's docs (http://getbootstrap.com)
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under the Creative Commons Attribution 3.0 Unported License. For
+ * details, see http://creativecommons.org/licenses/by/3.0/.
+ * Used for the Start Bootstrap Resources Page Menu Bar (http://startbootstrap.com/bootstrap-resources/).
+ */
+! function(a) {
+    a(function() {
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var b = document.createElement("style");
+            b.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}")), document.querySelector("head").appendChild(b)
+        } {
+            var c = a(window),
+                d = a(document.body);
+            a(".navbar").outerHeight(!0) + 10
+        }
+        d.scrollspy({
+            target: ".bs-docs-sidebar"
+        }), c.on("load", function() {
+            d.scrollspy("refresh")
+        }), a(".bs-docs-container [href=#]").click(function(a) {
+            a.preventDefault()
+        }), setTimeout(function() {
+            var b = a(".bs-docs-sidebar");
+            b.affix({
+                offset: {
+                    top: function() {
+                        var c = b.offset().top,
+                            d = parseInt(b.children(0).css("margin-top"), 10),
+                            e = a(".bs-docs-nav").height();
+                        return this.top = c - e - d
+                    },
+                    bottom: function() {
+                        var f = $('footer').outerHeight(true);
+                        return this.bottom = f + 30
+                    }
+                }
+            })
+        }, 100), setTimeout(function() {
+            a(".bs-top").affix()
+        }, 100)
     })
-  }
-  $('.js-close').on('click',function(e){
-    e.preventDefault();
-    removeActiveClass();
-    $('.center').animate({
-      opacity:'0'
-    },100);
-    removeOpenClass();
-    $('.close-arrow').hide();
-  });
-  $('.js-open-about').on('click',function(e){
-    e.preventDefault();
-    removeOpenClass();
-    $('.about').addClass('open');
-    $('.close-arrow').show(600);
-    $('.center').animate({
-      opacity:'1'
-    },500);
-        removeActiveClass();
-    $('.center').find('.js-open-about').addClass('active');
-  });
-  
-  $('.js-open-works').on('click',function(e){
-    e.preventDefault();
-    removeOpenClass();
-    $('.works').addClass('open');
-    $('.close-arrow').show(600);
-    $('.center').animate({
-      opacity:'1'
-    },500);
-        removeActiveClass();
-    $('.center').find('.js-open-works').addClass('active');
-  });
-  
-  $('.js-open-contact').on('click',function(e){
-    e.preventDefault();
-    removeOpenClass();
-    $('.contact').addClass('open');
-    $('.close-arrow').show(600);
-    $('.center').animate({
-      opacity:'1'
-    },500);
-    removeActiveClass();
-    $('.center').find('.js-open-contact').addClass('active');
-  });
-  
-  $('.js-get-email').on('click',function(e){
-    e.preventDefault();
-    swal({
-  title: 'Enter your E-mail Address to recieve Resume',
-  input: 'email'
-}).then(function(email) {
-  if (email) {
-    swal({
-      type: 'success',
-      html: 'Entered email: ' + email
-    });
-  }
-})
-  });
-  
+}(jQuery);
 
-function generateCard(data){
-    var title = data.title;
-    var desc = data.description;
-    var imgUrl = data.previewUrl;
-    var demoUrl = data.demoUrl;
-    return ('<li class="card animated zoomIn"><div class="card-media"><img src='+imgUrl+' alt="#" /></div><div class="card-content"><h4>'+title+'</h4><p>'+desc+'</p></div><div class="card-actions"><a target="_blank" href='+demoUrl+' class="view-demo">View Demo</a></div></li>');
-  }
-  function renderToDom(data){
-    data.forEach(function(item){
-      var card = generateCard(item);
-      //render card to dom
-      //console.log(card);
-      $('.js-list').append(card);
-    });
-  }
-  
-  //for intial rendering
-  renderToDom(frontend);
-  
-  function clearDom(){
-    $('.js-list').empty();
-  }
- $('input[type=radio]').on('change',function(e){
-     switch(e.target.value){
-       case 'frontend':
-         clearDom();
-         renderToDom(frontend);
-         break;
-       case 'backend':
-         clearDom();
-         renderToDom(backend);
-         break;
-       case 'react':
-         clearDom();
-         renderToDom(react);
-         break;
-       case 'meteor':
-         clearDom();
-         renderToDom(meteor);
-         break;
-     }
+// Modal Customiaztion for Search Modal
+
+$(".modal-search").on('show.bs.modal', function() {
+    setTimeout(function() {
+        $(".modal-backdrop").addClass("modal-backdrop-fullscreen");
+    }, 0);
+});
+$(".modal-search").on('hidden.bs.modal', function() {
+    $(".modal-backdrop").addClass("modal-backdrop-fullscreen");
+});
+$('#searchModal').on('shown.bs.modal', function() {
+    $('#search_box').focus();
+})
+
+// Configure the Search Plugin
+
+$(function() {
+    $('#search-query').lunrSearch({
+        indexUrl: '/js/index.json', // url for the .json file containing search index data
+        results: '#search-results', // selector for containing search results element
+        template: '#search-results-template', // selector for Mustache.js template
+        titleMsg: '<h2>Search results<h2>', // message attached in front of results (can be empty)
+        emptyMsg: '<p>Nothing found.</p>' // shown message if search returns no results
     });
 });
 
-if(document.createElement("p").style.flex===undefined){
-    alert("no flexbox support");
- }
+// Twitter Widget
+! function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, "script", "twitter-wjs");
 
-$.backstretch([
-        "https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_1024/v1464896760/photo-1428223501723-d821c5d00ca3_knl5ki.jpg",       "https://res.cloudinary.com/vinaypuppal/image/upload/c_scale,w_1024/v1464896839/photo-1432888498266-38ffec3eaf0a_ukva1r.jpg"
-    ],{
-        duration:20000,
-        fade: 'slow'
-    });
+// Google Analytics Tracking Script
+(function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-38417733-17', 'startbootstrap.com');
+ga('send', 'pageview');
