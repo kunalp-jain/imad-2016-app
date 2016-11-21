@@ -1,0 +1,68 @@
+body {
+    font-family: Vollkorn;
+    margin-top: 60px;
+
+    background-image: url("https://newevolutiondesigns.com/images/freebies/white-wallpaper-2.jpg");
+
+
+
+}
+.box{
+    max-width:300px;
+    max-height:200px;
+}
+p {
+    max-width:250px;
+    background-color:white;
+    font-family: sans-serif;
+    color:black;
+    line-height: 30px;
+    margin: 20px 10px 10px 10px;
+    font-weight: bold;
+}
+h3{
+  max-width:400px;
+  background-color: white;
+  border: 5px solid black;
+  font-weight: bold;
+  line-height: 30px;
+  margin: 20px 10px 10px 10px;
+  max-width: 100px;
+
+}
+
+.center {
+    text-align: center;
+}
+
+
+.text-big {
+    font-size: 300%;
+}
+
+#comment{
+    border-style: dotted;
+
+    border: 5px solid black;
+    max-width: 200px;
+}
+
+.footer{
+  margin-top: 70px;
+
+
+}
+
+.img-medium {
+    height: 200px;
+
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    color: black;
+    font-family: sans-serif;
+    padding: 20px 20px 20px 20px;
+
+}
