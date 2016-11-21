@@ -1,24 +1,58 @@
-var express = require('express');
-var morgan = require('morgan');
-var path = require('path');
+jQuery(function() {
+    // Initalize lunr with the fields it will be searching on. I've given title
+    // a boost of 10 to indicate matches on this field are more important.
+    window.idx = lunr(function() {
+        this.field('id');
+        this.field('title', { boost: 10 });
+        this.field('author');
+        this.field('categories');
+        this.field('url');
+        this.field('description');
+    });
 
-var app = express();
-app.use(morgan('combined'));
+    // Download the data from the JSON file we generated
+    window.data = $.getJSON('/search_data.json');
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
+    // Wait for the data to load and add it to lunr
+    window.data.then(function(loaded_data) {
+        $.each(loaded_data, function(index, value) {
+            window.idx.add(
+                $.extend({ "id": index }, value)
+            );
+        });
+    });
 
-app.get('/ui/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
-});
+    // Event when the form is submitted
+    $("#site_search").submit(function() {
+        event.preventDefault();
+        var query = $("#search_box").val(); // Get the value for the text field
+        var results = window.idx.search(query); // Get lunr to perform a search
+        display_search_results(results); // Hand the results off to be displayed
+    });
 
-app.get('/ui/madi.png', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
-});
+    function display_search_results(results) {
+        var $search_results = $("#search_results");
 
+        // Wait for data to load
+        window.data.then(function(loaded_data) {
 
-var port = 8080; // Use 8080 for local development because you might already have apache running on 80
-app.listen(8080, function () {
-  console.log(`IMAD course app listening on port ${port}!`);
+            // Are there any results?
+            if (results.length) {
+                $search_results.empty(); // Clear any old results
+
+                // Iterate over the results
+                results.forEach(function(result) {
+                    var item = loaded_data[result.ref];
+
+                    // Build a snippet of HTML for this result
+                    var appendString = '<li><a href="' + item.url + '">' + item.title + '</a> - ' + item.description + '</li>';
+
+                    // Add it to the results
+                    $search_results.append(appendString);
+                });
+            } else {
+                $search_results.html('<li>No results found</li>');
+            }
+        });
+    }
 });
