@@ -300,7 +300,7 @@ app.post('/intro-comment-submit', function (req, res) {
    var comment=req.body.usercomment;
    
     if (req.session && req.session.auth && req.session.auth.userId) {
-      pool.query('INSERT INTO mycomment (comment) VALUES ($1)', [comment], function (err, result) {
+      pool.query('INSERT INTO comment VALUES ($1)', [comment], function (err, result) {
          if (err) {
              res.status(500).send(err.toString());
          } else {
