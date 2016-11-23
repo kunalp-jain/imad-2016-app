@@ -340,19 +340,3 @@ app.post('/profile-comment-submit', function (req, res) {
         res.status(403).send('Only logged in users can comment');
     }
 });
-
-
-app.post('/random' function(req,err){
-var random=req.body.comment;
-pool.query("insert into rand(comment) values ($1)",[comment] function(err,res){
-if(res)
-{
-res.send('success');
-
-}
-else if(err){
-res.send('error');
-}
-});
-
-});
