@@ -38,3 +38,5 @@ function loadCommentForm () {
 
     };
 }
+
+loadCommentForm();
