@@ -73,63 +73,6 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/ui/Introduction1', function (req, res) {
- var htmlTemplate = `<!doctype html>
-<html>
-    <head>
-        <link href="/ui/style.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div class="container">
-            <div class="center">
-                <img id='pp' src="http://goo.gl/L0pk6U" class="img-medium"/>
-            </div>
-            <h3>About me</h3>
-            <p>
-                
-                Hi. My name is Ashutosh Soni.<br>
-                I am a student.<br>
-                I love programming.<br>
-                I love hacking.<br>
-                I am looking forward to developing more interactive webapp(s).<br>
-                
-                
-            </p>
-            
-            <hr/>
-            <h3>Currently:</h3>
-            <p>
-                  Student in SRMU
-            </p>
-            <hr/>
-            <h3>
-            Home Town
-            </h3>
-            <p>
-                Jaipur
-            </p>
-            <hr/>
-            <h3>
-                Hobbies
-            </h3>
-            <p> Games, Movies, Gardening, Music, Tv, Programming </p>
-            
-            <hr/>
-
-            <input type="submit" value="click for more info" id="sub"> <span id="bigdata">hello </span></input>
-            <input type="text" value="comment" id="icomment"> </input>
-            <ul id="usercomment" ></ul>
-
-        </div>
-        <script type="text/javascript" src="/ui/main.js">
-        </script>
-    </body>
-</html>`;
-    return htmlTemplate;
-
-});
-
-
 function hash (input, salt) {
     // How do we create a hash?
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
