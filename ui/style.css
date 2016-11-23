@@ -20,7 +20,12 @@ p {
     margin: 20px 10px 10px 10px;
     font-weight: bold;
 }
-
+.z
+{ height:40px;
+   width:120px;
+   border-color: #6495ED;
+    background-color: #BCD2EE;
+}
 h3{
   max-width:400px;
   background-color: white;
