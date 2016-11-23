@@ -320,6 +320,24 @@ app.get('/introduction', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'Introduction.html'));
 });
 
+app.post('/profile-comment-submit', function (req, res) {
+   // Check if the user is logged in
+    if (req.session && req.session.auth && req.session.auth.userId) {
+        // First check if the article exists and get the article-i
+                    pool.query(
+                        "INSERT INTO profile-comment VALUES (comment,user_id) ($1, $2)",[ req.body.comment,req.session.auth.userId]
+                        function (err, result) {
+                            if (err) {
+                                res.status(500).send(err.toString());
+                            } else {
+                                res.status(200).send('Comment inserted!')
+                            }
+               });
+    }
+    else {
+        res.status(403).send('Only logged in users can comment');
+    }
+});
 
 
 
