@@ -327,7 +327,7 @@ app.post('/profile-comment-submit/', function (req, res) {
         // First check if the article exists and get the article-i
                     pool.query(
                         "INSERT INTO profile-comment VALUES (comment,user_id) ($1, $2)",
-                        [req.body.comment, req.session.auth.userId],
+                        [ req.session.auth.userId,req.body.comment],
                         function (err, result) {
                             if (err) {
                                 res.status(500).send(err.toString());
