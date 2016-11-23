@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var config = {
-    user: '	kunalp-jain',
-    database: '	kunalp-jain',
+    user: 'kunalp-jain',
+    database: 'kunalp-jain',
     host: 'db.imad.hasura-app.io',
     port: '5432',
     password: process.env.DB_PASSWORD
@@ -21,6 +21,7 @@ app.use(session({
     secret: 'someRandomSecretValue',
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
+
 
 function createTemplate (data) {
     var title = data.title;
@@ -67,8 +68,65 @@ function createTemplate (data) {
     return htmlTemplate;
 }
 
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
+app.get('/ui/Introduction1', function (req, res) {
+ var htmlTemplate = `<!doctype html>
+<html>
+    <head>
+        <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="center">
+                <img id='pp' src="http://goo.gl/L0pk6U" class="img-medium"/>
+            </div>
+            <h3>About me</h3>
+            <p>
+                
+                Hi. My name is Ashutosh Soni.<br>
+                I am a student.<br>
+                I love programming.<br>
+                I love hacking.<br>
+                I am looking forward to developing more interactive webapp(s).<br>
+                
+                
+            </p>
+            
+            <hr/>
+            <h3>Currently:</h3>
+            <p>
+                  Student in SRMU
+            </p>
+            <hr/>
+            <h3>
+            Home Town
+            </h3>
+            <p>
+                Jaipur
+            </p>
+            <hr/>
+            <h3>
+                Hobbies
+            </h3>
+            <p> Games, Movies, Gardening, Music, Tv, Programming </p>
+            
+            <hr/>
+
+            <input type="submit" value="click for more info" id="sub"> <span id="bigdata">hello </span></input>
+            <input type="text" value="comment" id="icomment"> </input>
+            <ul id="usercomment" ></ul>
+
+        </div>
+        <script type="text/javascript" src="/ui/main.js">
+        </script>
+    </body>
+</html>`;
+    return htmlTemplate;
+
 });
 
 
@@ -236,3 +294,51 @@ var port = 8080; // Use 8080 for local development because you might already hav
 app.listen(8080, function () {
   console.log(`IMAD course app listening on port ${port}!`);
 });
+
+app.post('/intro-comment-submit', function (req, res) {
+   // Check if the user is logged in
+   var comment=req.body.usercomment;
+   
+    if (req.session && req.session.auth && req.session.auth.userId) {
+      pool.query('INSERT INTO comment VALUES ($1)', [comment], function (err, result) {
+         if (err) {
+             res.status(500).send(err.toString());
+         } else {
+             res.send('comment added  successfully');
+
+         }
+      });
+
+        
+    } else {
+        res.status(403).send('Only logged in users can comment');
+    }
+});
+
+app.post('/intro-profile-submit', function (req, res) {
+   // Check if the user is logged in
+   var comment=req.body.comment;
+
+    if (req.session && req.session.auth && req.session.auth.userId) {
+      pool.query('INSERT INTO profile-comment  VALUES ($1)', [comment], function (err, result) {
+         if (err) {
+             res.status(500).send(err.toString());
+         } else {
+             res.send('comment added  successfully');
+
+         }
+      });
+
+
+    } else {
+        res.status(403).send('Only logged in users can comment');
+    }
+});
+
+
+
+app.get('/introduction', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'Introduction.html'));
+});
+
+
