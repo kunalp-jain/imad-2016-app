@@ -337,27 +337,6 @@ app.post('/intro-profile-submit', function (req, res) {
     }
 });
 
-
-app.post('/bio',funcion(req,res){
-  pool.query('insert into bio (name)values ($1,$2)',[req.body.name],[req.session.auth.userId]function(err,res){
-    if(err)
-    {
-      res.status(500).send(err.tostring());
-    }
-    else
-    {
-      res.status(200).send('successfully');
-    }
-  });
-});
-
-
-
-
-
-
-
-
 app.get('/introduction', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'Introduction.html'));
 });
