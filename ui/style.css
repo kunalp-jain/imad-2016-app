@@ -27,16 +27,8 @@ p {
     border:2px solid black;
     border-radius:2%;
 }
-h3{
-  max-width:400px;
-  background-color: white;
-  border: 5px solid black;
-  font-weight: bold;
-  line-height: 30px;
-  margin: 20px 10px 10px 10px;
-  max-width: 100px;
 
-}
+
 
 
 .center {
