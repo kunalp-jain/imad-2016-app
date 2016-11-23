@@ -328,7 +328,8 @@ app.post('/profile-comment/', function (req, res) {
                             } else {
                                 res.status(200).send('Comment inserted!')
                             }
-               });     
+               });   
+    }
     else {
         res.status(403).send('Only logged in users can comment');
     }
