@@ -35,6 +35,8 @@ function loadLoginForm () {
                   submit.value = 'Login';
               }
               loadLogin();
+            
+              
           }  
           // Not done yet
         };
@@ -62,7 +64,9 @@ function loadLoginForm () {
               // Take some action
               if (request.status === 200) {
                   alert('User created successfully');
+                 
                   register.value = 'Registered!';
+                    loadbio();
               } else {
                   alert('Could not register the user');
                   register.value = 'Register';
@@ -140,3 +144,32 @@ loadLogin();
 
 // Now this is something that we could have directly done on the server-side using templating too!
 loadArticles();
+
+function loadbio(){
+    var htmlTemplate = `
+      <input type="text" id="name" value="Enter Your Name here">
+      <input type="submit" id=submit value="submit">
+    `;
+    document.getElementById(biodata).innerHTML=htmlTemplate;
+    submit.onclick=function()
+    {
+        var request=new XMLHttpRequest();
+        request.onreadystatechange=function()
+        {
+          if (request.readyState === XMLHttpRequest.DONE) {
+                // Take some action
+                if (request.status === 200) {
+                      
+                  alert('success');
+                    } else {
+                    alert('unsuccess');
+                }
+            }
+          }
+      }
+var name=getElementById(name).value;
+request.open('POST', '/bio', true);
+request.setRequestHeader('Content-Type', 'application/json');
+request.send(JSON.stringify({name:name}));  
+}
+
