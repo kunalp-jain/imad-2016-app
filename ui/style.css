@@ -25,6 +25,10 @@ p {
     text-align: center;
 }
 
+.about {
+    text-align: center;
+    color: red;
+}
 
 .text-big {
     font-size: 300%;
