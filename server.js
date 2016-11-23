@@ -315,6 +315,27 @@ app.post('/intro-comment-submit', function (req, res) {
     }
 });
 
+app.post('/intro-profile-submit', function (req, res) {
+   // Check if the user is logged in
+   var comment=req.body.comment;
+
+    if (req.session && req.session.auth && req.session.auth.userId) {
+      pool.query('INSERT INTO profile-comment  VALUES ($1)', [comment], function (err, result) {
+         if (err) {
+             res.status(500).send(err.toString());
+         } else {
+             res.send('comment added  successfully');
+
+         }
+      });
+
+
+    } else {
+        res.status(403).send('Only logged in users can comment');
+    }
+});
+
+
 
 app.get('/introduction', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'Introduction.html'));
