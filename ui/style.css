@@ -20,16 +20,6 @@ p {
     margin: 20px 10px 10px 10px;
     font-weight: bold;
 }
-h3{
-  max-width:400px;
-  background-color: white;
-  border: 5px solid black;
-  font-weight: bold;
-  line-height: 30px;
-  margin: 20px 10px 10px 10px;
-  max-width: 100px;
-
-}
 
 .center {
     text-align: center;
@@ -58,11 +48,3 @@ h3{
 
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    color: black;
-    font-family: sans-serif;
-    padding: 20px 20px 20px 20px;
-
-}
