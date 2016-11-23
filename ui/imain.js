@@ -6,7 +6,7 @@ function loadCommentForm () {
         <input type="submit" id="submit" value="Submit" />
         <br/>
         `;
-    document.getElementById('comment').innerHTML = commentFormHtml;
+    document.getElementById('pcomment').innerHTML = commentFormHtml;
 
     // Submit username/password to login
     var submit = document.getElementById('submit');
