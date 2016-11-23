@@ -315,3 +315,23 @@ app.post('/intro-comment-submit', function (req, res) {
     }
 });
 
+app.post('/profile-comment/', function (req, res) {
+   // Check if the user is logged in
+    if (req.session && req.session.auth && req.session.auth.userId) {
+        // First check if the article exists and get the article-i
+                    pool.query(
+                        "INSERT INTO profile-comment (comment, user_id) VALUES ($1, $2)",
+                        [req.body.comment, req.session.auth.userId],
+                        function (err, result) {
+                            if (err) {
+                                res.status(500).send(err.toString());
+                            } else {
+                                res.status(200).send('Comment inserted!')
+                            }
+               });   
+    }
+    else {
+        res.status(403).send('Only logged in users can comment');
+    }
+});
+
