@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var config = {
-    user: 'kunalp-jain',
-    database: 'kunalp-jain',
+    user: '	kunalp-jain',
+    database: '	kunalp-jain',
     host: 'db.imad.hasura-app.io',
     port: '5432',
     password: process.env.DB_PASSWORD
@@ -22,13 +22,12 @@ app.use(session({
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
 
-
 function createTemplate (data) {
     var title = data.title;
     var date = data.date;
     var heading = data.heading;
     var content = data.content;
-
+    
     var htmlTemplate = `
     <html>
       <head>
@@ -37,7 +36,7 @@ function createTemplate (data) {
           </title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link href="/ui/style.css" rel="stylesheet" />
-      </head>
+      </head> 
       <body>
           <div class="container">
               <div>
@@ -68,65 +67,8 @@ function createTemplate (data) {
     return htmlTemplate;
 }
 
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
-
-app.get('/ui/Introduction1', function (req, res) {
- var htmlTemplate = `<!doctype html>
-<html>
-    <head>
-        <link href="/ui/style.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div class="container">
-            <div class="center">
-                <img id='pp' src="http://goo.gl/L0pk6U" class="img-medium"/>
-            </div>
-            <h3>About me</h3>
-            <p>
-
-                Hi. My name is Ashutosh Soni.<br>
-                I am a student.<br>
-                I love programming.<br>
-                I love hacking.<br>
-                I am looking forward to developing more interactive webapp(s).<br>
-
-
-            </p>
-
-            <hr/>
-            <h3>Currently:</h3>
-            <p>
-                  Student in SRMU
-            </p>
-            <hr/>
-            <h3>
-            Home Town
-            </h3>
-            <p>
-                Jaipur
-            </p>
-            <hr/>
-            <h3>
-                Hobbies
-            </h3>
-            <p> Games, Movies, Gardening, Music, Tv, Programming </p>
-
-            <hr/>
-
-            <input type="submit" value="click for more info" id="sub"> <span id="bigdata">hello </span></input>
-            <input type="text" value="comment" id="icomment"> </input>
-            <ul id="usercomment" ></ul>
-
-        </div>
-        <script type="text/javascript" src="/ui/main.js">
-        </script>
-    </body>
-</html>`;
-    return htmlTemplate;
-
 });
 
 
@@ -162,7 +104,7 @@ app.post('/create-user', function (req, res) {
 app.post('/login', function (req, res) {
    var username = req.body.username;
    var password = req.body.password;
-
+   
    pool.query('SELECT * FROM "user" WHERE username = $1', [username], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
@@ -175,15 +117,15 @@ app.post('/login', function (req, res) {
               var salt = dbString.split('$')[2];
               var hashedPassword = hash(password, salt); // Creating a hash based on the password submitted and the original salt
               if (hashedPassword === dbString) {
-
+                
                 // Set the session
                 req.session.auth = {userId: result.rows[0].id};
                 // set cookie with a session id
                 // internally, on the server side, it maps the session id to an object
                 // { auth: {userId }}
-
+                
                 res.send('credentials correct!');
-
+                
               } else {
                 res.status(403).send('username/password is invalid');
               }
@@ -199,7 +141,7 @@ app.get('/check-login', function (req, res) {
            if (err) {
               res.status(500).send(err.toString());
            } else {
-              res.send(result.rows[0].username);
+              res.send(result.rows[0].username);    
            }
        });
    } else {
@@ -263,7 +205,7 @@ app.post('/submit-comment/:articleName', function (req, res) {
                         });
                 }
             }
-       });
+       });     
     } else {
         res.status(403).send('Only logged in users can comment');
     }
@@ -278,7 +220,7 @@ app.get('/articles/:articleName', function (req, res) {
         if (result.rows.length === 0) {
             res.status(404).send('Article not found');
         } else {
-          var articleData = result.rows[0];
+            var articleData = result.rows[0];
             res.send(createTemplate(articleData));
         }
     }
@@ -294,26 +236,3 @@ var port = 8080; // Use 8080 for local development because you might already hav
 app.listen(8080, function () {
   console.log(`IMAD course app listening on port ${port}!`);
 });
-
-app.post('/intro-comment-submit', function (req, res) {
-   // Check if the user is logged in
-   var comment=req.body.usercomment;
-
-    if (req.session && req.session.auth && req.session.auth.userId) {
-      pool.query('INSERT INTO comment VALUES ($1)', [comment], function (err, result) {
-         if (err) {
-             res.status(500).send(err.toString());
-         } else {
-             res.send('comment added  successfully');
-
-         }
-      });
-
-
-    } else {
-        res.status(403).send('Only logged in users can comment');
-    }
-});
-
-
-
