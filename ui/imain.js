@@ -20,8 +20,8 @@ function loadCommentForm () {
                 // Take some action
                 if (request.status === 200) {
                     // clear the form & reload all the comments
-                    document.getElementById('comment_text').value = '';
-                    loadComments();
+                    alert('successfuly inserted comment')
+                    
                 } else {
                     alert('Error! Could not submit comment');
                 }
