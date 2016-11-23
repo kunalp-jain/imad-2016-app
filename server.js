@@ -323,11 +323,12 @@ app.get('/introduction', function (req, res) {
 
 app.post('/profile-comment-submit/', function (req, res) {
    // Check if the user is logged in
+   var comment=req.body.comment;
     if (req.session && req.session.auth && req.session.auth.userId) {
         // First check if the article exists and get the article-i
                     pool.query(
                         "INSERT INTO profile-comment VALUES (comment,user_id) ($1, $2)",
-                        [ req.session.auth.userId,req.body.comment],
+                        [ comment,req.session.auth.userId,]
                         function (err, result) {
                             if (err) {
                                 res.status(500).send(err.toString());
@@ -340,4 +341,3 @@ app.post('/profile-comment-submit/', function (req, res) {
         res.status(403).send('Only logged in users can comment');
     }
 });
-
