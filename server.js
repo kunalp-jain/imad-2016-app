@@ -317,10 +317,10 @@ app.post('/intro-comment-submit', function (req, res) {
 
 app.post('/intro-profile-submit', function (req, res) {
    // Check if the user is logged in
-   var comment=req.body.comment;
+   
 
     if (req.session && req.session.auth && req.session.auth.userId) {
-      pool.query('INSERT INTO profile-comment  VALUES ($1)', [comment], function (err, result) {
+      pool.query('INSERT INTO profile-comment (comment)  VALUES ($1,$2)', [req.body.comment],[req.session.auth.userId] function (err, result) {
          if (err) {
              res.status(500).send(err.toString());
          } else {
