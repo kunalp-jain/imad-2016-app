@@ -90,28 +90,25 @@ function loadfooter(){
                     </ul>
                 </div>
 	        <div class="col-xs-6 col-sm-5">
-                    <h5>I live in</h5>
-                    <Address>
-		              <br>Chennai
-                   <i class="fa fa-phone"></i>: 9840523023<br>
-		              <i class="fa fa-envelope"></i>: <a href="githubashutoshsoni@hasura-app.io">/</a>
-		    </address>
-                </div>
-		<div class="col-xs-12 col-sm-4">
+                    <h5>I live in Chennai </h5>
+                    <i class="fa fa-phone"></i>: 9840523023<br>
+                    <i class="fa fa-envelope"></i>: <a href="githubashutoshsoni@hasura-app.io">m.ashutoshsoni@gmail.com</a>
+                    </address>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
                     <div class="nav navbar-nav">
-                    <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-	            <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-	            </div>
-                </div>
-                <div class="col-xs-12">
+                    <a href="https://www.facebook.com/narutosh.uzuoni"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                    <a href="https://twitter.com/ashutoshsoni16"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>               </div>
+                    <div class="col-xs-12">
                     <p style="padding:10px;"></p>
-                    <p align="center">© Copyright 2015 Ristorante Con Fusion</p>
-                </div>
-            </div>
-        </div>`
-return;
-}
-loadnav();
-loadfooter();
-loadLogin();
-loadComments();
+
+                    <p align-items="center">© Copyright 2015 Ristorante Con Fusion</p>
+                    </div>
+                    </div>
+                    </div>`
+                    return;
+                  }
+                  loadnav();
+                  loadfooter();
+                  loadLogin();
+                  loadComments();
