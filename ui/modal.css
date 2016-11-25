@@ -134,26 +134,30 @@ label{
   .pull-right>ul>li {
 list-style:none;
 display:inline-block;
-width:20%;
+width:23%;
 }
  .pull-right>ul{
-  display:inline-block;   
+  display:inline-block; 
+  width: 32%;
  }
-.social-network a.icoFacebook {
+.social-network .icoFacebook {
     background-color: #3B5998;
     color:white;
 }
-.social-network a.icoTwitter{
+.social-network .icoTwitter{
     background-color: #33ccff;
     color:white;
 }
-.social-network a.icoGoogle {
+.social-network .icoGoogle {
     background-color: #BD3518;
     color:white;
 }
 .social-network a.icoPinterest {
     background-color: #c8232c;
     color:white;
+}
+.social-network a{
+ width:10%;   
 }
 
    
