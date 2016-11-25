@@ -2,8 +2,8 @@
 function loadLoginForm () {
     var loginHtml = `
         <h2 >Login/Register to have your own article</h2>
-        <input type="text" id="username" placeholder="username" />
-        <input  type="password" id="password" placeholder="password" />
+        <input class="form-control input-lg" type="text" id="username" placeholder="username" />
+        <input  type="password" class="form-control input-lg" id="password" placeholder="password" />
         <br/><br/>
         <input  type="submit" class="btn btn-primary btn-lg"  id="login_btn" value="Login" />
         <input type="submit" class="btn btn-primary btn-lg" id="register_btn" value="Register" />
@@ -81,12 +81,13 @@ function loadLoginForm () {
 }
 
 function loadLoggedInUser (username) {
-  document.getElementById('rules').innerHTML=` `;
-    var loginArea = document.getElementById('login_area');
-    loginArea.innerHTML = `
-        <h2 class="text-left" > Hi <i>${username}</i></h3>
+  document.getElementById('login_area').innerHTML=` `;
+    var logout = document.getElementById('logout');
+    logout.innerHTML = `
+        <h4 class="text-left" > Hi <i>${username}</i></h4>
         <a href="/logout">Logout</a>
     `;
+
 }
 
 function loadLogin () {
