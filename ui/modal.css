@@ -128,10 +128,17 @@ label{
     .pull-right {
     float: right !important;
 }
- .pull-right ul li {
+  .pull-right>ul>li {
 list-style:none;
 display:inline-block;
 }
+ .pull-right>ul{
+  display:inline-block;   
+ }
+.social-network a.icoFacebook {
+    background-color: #3B5998;
+}
+
    
 footer{
     bottom:0px;
