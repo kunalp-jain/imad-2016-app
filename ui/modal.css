@@ -143,6 +143,18 @@ width:20%;
     background-color: #3B5998;
     color:white;
 }
+.social-network a.icoTwitter{
+    background-color: #33ccff;
+    color:white;
+}
+.social-network a.icoGoogle {
+    background-color: #BD3518;
+    color:white;
+}
+.social-network a.icoPinterest {
+    background-color: #c8232c;
+    color:white;
+}
 
    
 footer{
