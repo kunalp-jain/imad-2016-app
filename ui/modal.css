@@ -153,12 +153,15 @@ width:21%;
     background-color: #BD3518;
     color:white;
 }
-.social-network a.icoPinterest {
+.social-network icoPinterest {
     background-color: #c8232c;
     color:white;
 }
 .social-network a{
  width:25%;   
+}
+.container{
+     background:#fff;
 }
 
 body{
