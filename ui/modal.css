@@ -115,7 +115,7 @@ label{
     .navbar {
         color:black;
         background:#526E6B;
-        height:200px;
+        height:150px;
     }
     .nav>li>a:hover{
         color:#337ab7;
@@ -126,6 +126,8 @@ label{
         
     }
     .pull-right {
+       height:20px;
+        
     float: right !important;
 }
   .pull-right>ul>li {
@@ -137,6 +139,7 @@ display:inline-block;
  }
 .social-network a.icoFacebook {
     background-color: #3B5998;
+    color:white;
 }
 
    
