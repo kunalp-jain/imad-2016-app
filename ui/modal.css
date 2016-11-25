@@ -84,7 +84,7 @@ label{
 }
 /*----------new-----------*/
 .page-scroll a{font-size:30px; }
-.nav li a {color:black;}
+.nav> li> a {color:black;}
 .emblem{background: url(./img/jainism12.png);}
 .post-subtitle{border-bottom:1px solid #003501;text-align:center;}
 .btn-success,.btn-primary{border-radius:10px;}
