@@ -115,7 +115,7 @@ label{
     .navbar {
         color:black;
         background:black;
-        height:200px;
+        height:300px;
     }
     .nav>li>a:hover{
         color:#337ab7;
