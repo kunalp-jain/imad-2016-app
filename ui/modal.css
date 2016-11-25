@@ -116,7 +116,7 @@ label{
         color:black;
         background:white;
     }
-    .navbar a{
-        color:black;
+    .nav>li>a:hover{
+        color:#db3b2b;
         
     }
