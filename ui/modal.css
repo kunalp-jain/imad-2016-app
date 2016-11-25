@@ -114,7 +114,7 @@ label{
     box-shadow: 10px 10px 5px #888888;}
     .navbar {
         color:black;
-        background:black;
+        background:#F0F8FF;
         height:200px;
     }
     .nav>li>a:hover{
