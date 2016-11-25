@@ -112,6 +112,10 @@ label{
     border: 1px solid #888888;
     box-sizing: border-box;
     box-shadow: 10px 10px 5px #888888;}
+    .navbar {
+        color:black;
+        background:white;
+    }
     .navbar a{
         color:black;
         background:white;
