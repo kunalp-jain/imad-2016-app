@@ -98,7 +98,7 @@ document.getElementById('wr-article').innerHTML=`
     <br/>
     <input type="text" id="article_heading" cols="30"  placeholder="Enter your heading here..."></textarea>
     <br/>
-    <input type="text" id="article_date" cols="10"  placeholder="Enter your date here..."></textarea>
+    <input type="text" id="article_date" cols="10"  placeholder="yyyy-mm-dd..."></textarea>
     <br/>
     <input type="text" id="article_content" cols="30"  placeholder="Enter your content here..."></textarea>
     <br/>
