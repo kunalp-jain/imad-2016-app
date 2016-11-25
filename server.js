@@ -324,7 +324,7 @@ app.get('/introduction', function (req, res) {
 app.post('/pcomment',function(req,res){
   var content=req.body.data;
   if (req.session && req.session.auth && req.session.auth.userId){
-  pool.query('insert into profilecomment (user_id),(comment) values ($1,$2)',[req.session.auth.userId],[content], function(result,err){
+  pool.query('insert into profilecomment (user_id,comment) values ($1,$2)',[req.session.auth.userId],[content], function(result,err){
     if(err){
       res.status(500).send(err.toString());
     }
