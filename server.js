@@ -28,7 +28,7 @@ function createTemplate (data) {
     var date = data.date;
     var heading = data.heading;
     var content = data.content;
-    
+
     var htmlTemplate = `
     <html>
       <head>
@@ -36,30 +36,37 @@ function createTemplate (data) {
               ${title}
           </title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="viewport" content="width=device-width ,initial scale=1">
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
           <link href="/ui/style.css" rel="stylesheet" />
-      </head> 
+
+      </head>
       <body>
           <div class="container">
               <div>
                   <a href="/">Home</a>
               </div>
               <hr/>
-              <h3>
+              <h3 >
                   ${heading}
               </h3>
-              <div>
+              <div class="glyphicon glyphicon-time">
                   ${date.toDateString()}
               </div>
-              <div>
+              <br>
+              <div class="container well well-sm ">
                 ${content}
               </div>
               <hr/>
               <h4>Comments</h4>
-              <div id="comment_form">
+              <div id="comment_form" class="">
               </div>
-              <div id="comments">
-                <center>Loading comments...</center>
+
+              <div id="comments" >
+                Loading comments...
               </div>
+
           </div>
           <script type="text/javascript" src="/ui/article.js"></script>
       </body>
