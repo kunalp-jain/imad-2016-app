@@ -191,11 +191,11 @@
                                             <div class="tab-content">
                                                 <div id="sectionA" class="tab-pane fade in active">
                                                     <div class="innter-form">
-                                                        <form class="sa-innate-form" method="post">
+                                                        <form class="sa-innate-form" method="post" action='/login'>
                                                             <label>Username</label>
-                                                            <input type="text" id="username">
+                                                            <input type="text" id="username" name="username">
                                                             <label>Password</label>
-                                                            <input type="password" id="password">
+                                                            <input type="password" id="password" name="password">
                                                             <button type="button" class="btn btn-success btn-sm" id="login_btn">Sign In</button>
                                                         </form>
                                                     </div>
@@ -205,9 +205,9 @@
                                                     <div class="innter-form">
                                                         <form class="sa-innate-form" method="post">
                                                             <label>New Username</label>
-                                                            <input type="text" id="new_username">
+                                                            <input type="text" id="new_username" name="new_username">
                                                             <label>New Password</label>
-                                                            <input type="password" id="new_password">
+                                                            <input type="password" id="new_password" name="new_password">
                                                             <button type="button" class="btn btn-primary btn-sm" id="register_btn">Register</button>
                                                         </form>
                                                     </div>
