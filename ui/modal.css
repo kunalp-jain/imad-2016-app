@@ -128,6 +128,9 @@ label{
     .pull-right {
     float: right !important;
 }
+ .pull-right ul li {
+list-style:none;
+}
    
 footer{
     bottom:0px;
