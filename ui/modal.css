@@ -130,6 +130,7 @@ label{
 }
  .pull-right ul li {
 list-style:none;
+display:inline-block;
 }
    
 footer{
