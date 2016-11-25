@@ -120,3 +120,6 @@ label{
         color:#db3b2b;
         
     }
+    .nav-tabs>li{
+  color:black !important;
+}
