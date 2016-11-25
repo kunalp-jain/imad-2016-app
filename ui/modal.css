@@ -160,6 +160,10 @@ width:21%;
 .social-network a{
  width:25%;   
 }
+.intro-header{
+   position:absolute;
+    
+}
 .container{
      background:#fff;
 }
