@@ -142,7 +142,9 @@ display:inline-block;
     color:white;
 }
 
-   
+   .nav{
+       position: fixed;
+   }
 footer{
     bottom:0px;
 }
