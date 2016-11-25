@@ -346,7 +346,7 @@ else{
   });
   
   
-app.post('submit-article',function(req,res){
+app.post('/submit-article',function(req,res){
   if (req.session && req.session.auth && req.session.auth.userId){
     pool.query('insert into article (title,heading,date,content) values ($1,$2,$3,$4)',[req.body.title,req.body.heading,req.body.date,req.body.content],function(err,result){
       if(err){
