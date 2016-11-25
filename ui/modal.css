@@ -127,3 +127,6 @@ label{
     .nav-tabs>li{
   color:black !important;
 }
+footer{
+    bottom:0px;
+}
