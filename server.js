@@ -93,6 +93,10 @@ app.get('/3', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', '3.html'));
 });
 
+app.get('/jainismvideos', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'jainismvideos.html'));
+});
+
 function hash (input, salt) {
     // How do we create a hash?
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
