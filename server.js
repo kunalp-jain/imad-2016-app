@@ -128,6 +128,7 @@ app.post('/create-user', function (req, res) {
    var dbString = hash(password, salt);
    pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
       if (err) {
+          res.send('user inside');
           res.status(500).send(err.toString());
       } else {
           res.send('User successfully created: ' + username);
@@ -136,7 +137,6 @@ app.post('/create-user', function (req, res) {
 });
 
 app.post('/login', function (req, res) {
-    alert("welcome");
    var username = req.body.username;
    var password = req.body.password;
    alert("Name"+username);
