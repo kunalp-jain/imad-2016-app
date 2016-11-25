@@ -116,6 +116,7 @@ label{
         color:black;
         background:#526E6B;
         height:120px;
+        padding-top:2%;
     }
     .nav>li>a:hover{
         color:#337ab7;
