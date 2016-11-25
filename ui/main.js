@@ -215,21 +215,6 @@ function loadrules()
   return;
 }
 
-
-loadnav();
-
-loadfooter();
-
-loadrules();
-
-
-loadLogin();
-
-// Now this is something that we could have directly done on the server-side using templating too!
-loadArticles();
-
-
-
 function loadfooter(){
   document.getElementById('foot').innerHTML=`
         <div class="container row-footer ";>
@@ -262,3 +247,15 @@ function loadfooter(){
                     </div>`
                     return;
                   }
+
+loadnav();
+
+loadfooter();
+
+loadrules();
+
+
+loadLogin();
+
+// Now this is something that we could have directly done on the server-side using templating too!
+loadArticles();
