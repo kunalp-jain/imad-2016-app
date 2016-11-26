@@ -79,8 +79,8 @@
 								 
 		
                   
-						 <iframe width="760" height="315" src="https://www.youtube.com/embed/UHQ5VyjybL8" frameborder="0" allowfullscreen></iframe>
-						 <iframe width="560" height="315" src="https://www.youtube.com/embed/nfslivZmMMA" frameborder="0" allowfullscreen></iframe>
+						 <iframe width="660" height="315" src="https://www.youtube.com/embed/UHQ5VyjybL8" frameborder="0" allowfullscreen></iframe>
+						 <iframe width="660" height="315" src="https://www.youtube.com/embed/nfslivZmMMA" frameborder="0" allowfullscreen></iframe>
                                </div>
                          
 <hr><br>
@@ -101,29 +101,41 @@
                 
                 <!-- Ask to login/register -->
                 <!-- Modal -->
-                <div id="login-modal" class="modal fade" role="dialog">
+                <div id="login-modal" class="modal slideInLeft login-form " role="dialog">
                   <div class="modal-dialog">
 
                     <!-- Modal content-->
                     <div class="modal-content">
+                        <div class="modal-footer">
+                        <label data-dismiss="modal">Close</label>
+                      </div>
                       <div class="modal-body">
                         <div class="container-fluid">
                              <div class="row">
-                                 <div class="">
-                                        <div class="form-body">
+                                 <div class="panel panel-primary">
+                                         <div class=" form-body">
+                                            <div class=" panel-heading"> 
                                             <ul class="nav nav-tabs final-login">
                                                 <li class="active"><a class="btn btn-sm" data-toggle="tab" href="#sectionA">Existing User</a></li>
                                                 <li><a class="btn btn-sm"  data-toggle="tab" href="#sectionB">New User</a></li>
                                             </ul>
+                                            </div>
+                                            <div class="panel-body">
                                             <div class="tab-content">
                                                 <div id="sectionA" class="tab-pane fade in active">
                                                     <div class="innter-form">
                                                         <form class="sa-innate-form" method="post">
-                                                            <label>Username</label>
-                                                            <input type="text" id="username">
-                                                            <label>Password</label>
-                                                            <input type="password" id="password">
-                                                            <button type="button" class="btn btn-info btn-sm" id="login_btn">Sign In</button>
+                                                             <div class="col-md-12">
+                                                            <label class="col-md-6">Username</label>
+                                                            <input class="col-md-6" type="text" id="username">
+                                                          </div>
+                                                            <div class="col-md-12">
+                                                            <label class="col-md-6">Password</label>
+                                                            <input class="col-md-6" type="password" id="password">
+                                                            </div>
+                                                            <div class="col-md-12"><div class="col-md-4"> </div>
+                                                            <button type="button" class="btn btn-info btn-sm col-md-5" id="login_btn">Sign In</button>
+                                                            </div>
                                                         </form>
                                                     </div>
                                                     <div class="clearfix"></div>
@@ -131,14 +143,21 @@
                                                 <div id="sectionB" class="tab-pane fade">
                                                     <div class="innter-form">
                                                         <form class="sa-innate-form" method="post">
-                                                            <label>New Username</label>
-                                                            <input type="text" id="new_username">
-                                                            <label>New Password</label>
-                                                            <input type="password" id="new_password">
-                                                            <button type="button" class="btn btn-info btn-sm" id="register_btn">Register</button>
+                                                            <div class="col-md-12">
+                                                            <label class="col-md-6">New Username</label>
+                                                            <input  class="col-md-6" type="text" id="new_username"><br>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                            <label class="col-md-6">New Password</label>
+                                                            <input class="col-md-6" type="password" id="new_password">
+                                                            </div>
+                                                            <div class="col-md-12"><div class="col-md-4"> </div>
+                                                            <button type="button" class="btn btn-info btn-sm col-md-5" id="register_btn">Register</button>
+                                                             </div>
                                                         </form>
                                                     </div>
                                                     
+                                                </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -146,9 +165,7 @@
                                 </div>
                             </div>
                       </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      </div>
+                      
                     </div>
 
                   </div>
