@@ -120,11 +120,11 @@ app.get('/hash/:input', function(req, res) {
 
 
 app.post('/create-user', function (req, res) {
-    var pg = require('pg');
-var conString = "postgres://kunalp-jain:db-kunalp-jain-12182@localhost:5432/kunalp-jain";
-var client = new pg.Client(conString);
-client.connect();
-   client.query('INSERT INTO user (username, password) VALUES ($1, $2)', ['uma', 'devi'], function (err, result) {
+ //   var pg = require('pg');
+//var conString = "postgres://kunalp-jain:db-kunalp-jain-12182@localhost:5432/kunalp-jain";
+//var client = new pg.Client(conString);
+//client.connect();
+  /* client.query('INSERT INTO user (username, password) VALUES ($1, $2)', ['uma', 'devi'], function (err, result) {
       if (err) {
        //   res.send('user inside');
           res.status(500).send(err.toString());
@@ -133,15 +133,16 @@ client.connect();
       } 
 
    }); 
+   */
 
-   /*var pool = new Pool(config);
-   var username = req.body.new_username1;
-   var password = req.body.new_password1;
+   var pool1 = new Pool(config);
+   //var username = req.body.new_username1;
+   //var password = req.body.new_password1;
   // var salt = crypto.randomBytes(128).toString('hex');
    //var dbString = hash(password, salt);
-   res.send(pool);
+   res.send(pool1);
    JSON.stringify(pool); 
-   pool.query('INSERT INTO user (username, password) VALUES ($1, $2)', ['uma', 'devi'], function (err, result) {
+   pool1.query('INSERT INTO user (username, password) VALUES ($1, $2)', ['uma', 'devi'], function (err, result) {
       if (err) {
        //   res.send('user inside');
           res.status(500).send(err.toString());
@@ -150,7 +151,7 @@ client.connect();
       } 
 
    }); 
-  // res.send('user' + username); */
+  // res.send('user' + username); 
 });
 
 app.post('/login', function (req, res) {
