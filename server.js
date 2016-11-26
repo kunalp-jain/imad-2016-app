@@ -121,10 +121,11 @@ app.post('/create-user', function (req, res) {
    var pool = new Pool(config);
    var username1 = req.query.new_username1;
    var password1 = req.query.new_password1;
+  res.writeHead(200, {'content-type': 'text/plain'});
  //  var salt = crypto.randomBytes(128).toString('hex');
   // var dbString = hash(password, salt);
   res.send(username1);
-  /* pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', ['welcome', 'test'], function (err, result) {
+  pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', ['welcome', 'test'], function (err, result) {
       if (err) {
        //   res.send('user inside');
           res.status(500).send(err.toString());
@@ -132,7 +133,7 @@ app.post('/create-user', function (req, res) {
           res.send('User successfully created!' +username1);
       } 
 
-   }); */
+   }); 
   // res.send('user' + username); 
 });
 
