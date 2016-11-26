@@ -122,13 +122,6 @@ app.get('/hash/:input', function(req, res) {
 app.post('/create-user', function (req, res) {
     
     var pool = new Pool(config);
-var server = http.createServer(function(req, res) {
-
-  var onError = function(err) {
-    console.log(err.message, err.stack)
-    res.writeHead(500, {'content-type': 'text/plain'});
-    res.end('An error occurred');
-  };
    var username = req.body.new_username1;
    var password = req.body.new_password1;
  //  return username;
@@ -145,7 +138,6 @@ var server = http.createServer(function(req, res) {
 
    }); 
    res.send('user' + username);
-});
 });
 
 app.post('/login', function (req, res) {
