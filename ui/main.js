@@ -115,8 +115,6 @@ if(request.readyState===XMLHttpRequest.DONE)
     if(request.status===200)
     {
       alert('Article submitted!');
-      submit.value='Submit';
-      
     }
     else{
       alert('could not submit articles');
