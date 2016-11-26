@@ -90,7 +90,7 @@ label{
 .btn-success,.btn-primary{border-radius:10px;}
 .btn-success,.btn-primary:hover{color:white;}
 .heads{float:right;}
-.tab-content button{float:right;}
+
 .tab-content button:hover{background:#f0a501}
 .modal-footer button{float:left;margin-left:43%;width:20%;border-radius:10px;}
 
