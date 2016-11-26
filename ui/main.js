@@ -217,7 +217,7 @@ function loadrules()
 
 function loadfooter(){
   document.getElementById('foot').innerHTML=`
-        <div class="container row-footer ";>
+        <div class="row-footer ";>
             <div class="row row-footer">
 	        <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
                     <h5>Links</h5>
