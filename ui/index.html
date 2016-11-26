@@ -152,44 +152,61 @@
 
             <!-- Ask to login/register -->
                 <!-- Modal -->
-                 <div id="login-modal" class="modal fade" role="dialog">
+                 <div id="login-modal" class="modal slideInLeft login-form " role="dialog">
                   <div class="modal-dialog">
 
                     <!-- Modal content-->
                     <div class="modal-content">
+                        <div class="modal-footer">
+                        <label data-dismiss="modal">Close</label>
+                      </div>
                       <div class="modal-body">
                         <div class="container-fluid">
                              <div class="row">
-                                 <div class="">
-                                        <div class="form-body">
+                                 <div class="panel panel-primary">
+                                         <div class=" form-body">
+                                            <div class=" panel-heading"> 
                                             <ul class="nav nav-tabs final-login">
                                                 <li class="active"><a class="btn btn-sm" data-toggle="tab" href="#sectionA">Existing User</a></li>
-                                                <li><a class="btn btn-sm" data-toggle="tab" href="#sectionB">New User</a></li>
+                                                <li><a class="btn btn-sm"  data-toggle="tab" href="#sectionB">New User</a></li>
                                             </ul>
+                                            </div>
+                                            <div class="panel-body">
                                             <div class="tab-content">
                                                 <div id="sectionA" class="tab-pane fade in active">
                                                     <div class="innter-form">
                                                         <form class="sa-innate-form" method="post" action='/login'>
-                                                            <label>Username</label>
-                                                            <input type="text" id="username" name="username">
-                                                            <label>Password</label>
-                                                            <input type="password" id="password" name="password">
-                                                            <button type="button" class="btn btn-success btn-sm" id="login_btn">Sign In</button>
+                                                           <div class="col-md-12">
+                                                            <label class="col-md-6">Username</label>
+                                                            <input class="col-md-6" type="text" id="username" name="username">
+                                                             </div>
+                                                            <div class="col-md-12">
+                                                            <label class="col-md-6">Password</label>
+                                                            <input class="col-md-6" type="password" id="password" name="password"></div>
+                                                            <div class="col-md-12"><div class="col-md-4"> </div>
+                                                            <button type="button" class="btn btn-success btn-sm col-md-5" id="login_btn">Sign In</button>
+                                                             </div>
                                                         </form>
                                                     </div>
                                                     <div class="clearfix"></div>
                                                 </div>
                                                 <div id="sectionB" class="tab-pane fade">
                                                     <div class="innter-form">
-                                                        <form class="sa-innate-form" method="post" action="/create-user" enctype="application/x-www-form-urlencoded">
-                                                            <label>New Username</label>
-                                                            <input type="text" id="new_username1">
-                                                            <label>New Password</label>
-                                                            <input type="text" id="new_password1">
-                                                            <button type="submit" class="btn btn-primary btn-sm" >Register</button>
+                                                        <form class="sa-innate-form" method="post" action="/create-user" enctype="application/x-www-form-urlencoded"><div class="col-md-12">
+                                                            <label class="col-md-6">New Username</label>
+                                                            <input  class="col-md-6" type="text" id="new_username1"><br>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                            <label class="col-md-6">New Password</label>
+                                                            <input class="col-md-6" type="text" id="new_password1">
+                                                            </div>
+                                                            <div class="col-md-12"><div class="col-md-4"> </div>
+                                                            <button type="submit" class="btn btn-primary btn-sm col-md-5" >Register</button>
+                                                               </div>
                                                         </form>
-                                                    </div>
+                                                     </div>
                                                     
+                                                </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -197,9 +214,7 @@
                                 </div>
                             </div>
                       </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                      </div>
+                      
                     </div>
 
                   </div>
