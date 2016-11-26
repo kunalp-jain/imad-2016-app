@@ -2,13 +2,13 @@
                   loadnav();
                   loadfooter();
               loadCommentForm();
-              
+
 function loadCommentForm () {
-  var comment = `  <h5>Submit a comment</h5>
-  <textarea id="comment_text" rows="5" cols="100" placeholder="Enter your comment here..."></textarea>
-  <br/>
-  <input type="submit" id="submit" value="Submit" />
-  <br/>`;
+  var comment = `  <hr><p class="h3">Give feedback of my work. You need to be looged in to access this feature </p>
+  <textarea id="comment_text1" rows="5" cols="100" placeholder="Type here..."></textarea>
+  <br>
+  <input class="btn btn-primary" type="submit " id="submit" value="Submit" />
+  <br>`;
   document.getElementById('comment').innerHTML = comment;
 
   var submit=document.getElementById('submit');
@@ -20,19 +20,19 @@ function loadCommentForm () {
       {
         if(request.status===200)
         {
-          alert('posted successfully');
-
+          alert('sent successfully');
+          submit.value='submit';
         }
         else{
           alert('unsuccessfuly');
         }
       }
     };
-    var data= document.getElementById('comment_text').value;
+    var data= document.getElementById('comment_text1').value;
     request.open('POST','/pcomment',true);
     request.setRequestHeader('Content-Type','application/json');
     request.send(JSON.stringify({data:data}));
-    submit.value='submitting...';
+    submit.value='submitting...'
 
   };
 
@@ -63,12 +63,9 @@ function loadnav(){
         <li class="active"><a href="/">Home</a></li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/ui/Introduction">About me <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">profile</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/introduction">profile</a></li>
           </ul>
         </li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
       </ul>
     </div>
   </nav>
@@ -83,7 +80,7 @@ function loadfooter(){
                     <h5>Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="/ui/Introduction">About me</li>
+                        <li><a href="/Introduction">About me</li>
 
                         <li><a href="index.html#">Contact</a></li>
                     </ul>
@@ -99,14 +96,16 @@ function loadfooter(){
                     <a href="https://www.facebook.com/narutosh.uzuoni"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
                     <a href="https://twitter.com/ashutoshsoni16"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>               </div>
                     <div class="col-xs-12">
-                    <p style="padding:10px;"></p>
 
-                    <p align-items="center">© Copyright 2015 Ristorante Con Fusion</p>
                     </div>
+
                     </div>
-                    </div>`
+
+
+                    </div>
+  <p> made with<div class="fa fa-heart">by Ashutosh Soni</div></p>
+
+                    `
+
                     return;
                   }
-
-
-
