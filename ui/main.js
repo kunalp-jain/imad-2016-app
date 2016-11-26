@@ -105,7 +105,7 @@ document.getElementById('wr-article').innerHTML=`
     <br/>a
     <input class="btn btn-primary " type="submit" id="submit" value="Submit" />
 </div>
-    `
+    `;
     var submit =document.getElementById('submit');
     submit.onclick= function(){
 var request= new XMLHttpRequest();
@@ -115,6 +115,7 @@ if(request.readyState===XMLHttpRequest.DONE)
     if(request.status===200)
     {
       alert('Article submitted!');
+      submit.value='submited';
     }
     else{
       alert('could not submit articles');
@@ -134,7 +135,6 @@ submit.value='submitting wait...'
 
   return;
 }
-
 function loadLogin () {
     // Check if the user is already logged in
     var request = new XMLHttpRequest();
