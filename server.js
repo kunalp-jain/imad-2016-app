@@ -119,11 +119,11 @@ app.get('/hash/:input', function(req, res) {
 
 app.post('/create-user', function (req, res) {
    var pool = new Pool(config);
-   var username = req.body.new_username1;
-   var password = req.body.new_password1;
+   var username1 = req.body.new_username1;
+   var password1 = req.body.new_password1;
  //  var salt = crypto.randomBytes(128).toString('hex');
   // var dbString = hash(password, salt);
-   pool.query('INSERT INTO user (username, password) VALUES ($1, $2)', [username, password], function (err, result) {
+   pool.query('INSERT INTO user (username, password) VALUES ($1, $2)', [username1, password1], function (err, result) {
       if (err) {
        //   res.send('user inside');
           res.status(500).send(err.toString());
