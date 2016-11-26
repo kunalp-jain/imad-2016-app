@@ -16,18 +16,7 @@
         src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 <script type="text/javascript" 
         src="http://www.your-domain.com/easy-comment/jquery.easy-comment.min.js"></script>
-		<script>
-		 jQuery(document).ready(function(){
-    // Your other javascript code if any
-
-    $("#id_of_your_comment_container").EasyComment({
-      path:"/lab/easy-comment/", //Change it to the folder where you put the easycomment files
-      moderate:false,
-      maxReply:5
-    });
-    // Your other javascript code if any
-    });
-	</script>
+		
             <link href="ui/modal.css" rel="stylesheet">
         </head>
     <body>
@@ -173,7 +162,7 @@
                                         
                                           <input type="textarea"  id="username" placeholder="Write a comment"><br>
                                          
-                                          <button type="button" class="btn btn-success btn-sm" >Post</button>
+                                          <button type="button" class="btn btn-success btn-sm" id="commentpost"  >Post</button>
                               </form>
 					</div>
 					</div>
@@ -238,6 +227,18 @@
             <script src="ui/clean-blog.min.js"></script>
             <script src="ui/main.js"></script>
             <script src="ui/article.js"></script>
+            <script>
+		 jQuery(document).ready(function(){
+    // Your other javascript code if any
+
+    $("#commentpost").click(function(){
+        alert("hai")
+      //  $.post( "test.php", { name: "John", time: "2pm" } );
+     
+    });
+    // Your other javascript code if any
+   
+	</script>
 			
 </body>
 </html>
