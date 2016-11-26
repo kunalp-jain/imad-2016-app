@@ -356,6 +356,7 @@ app.post('/submit-article',function(req,res){
       }
       else{
         res.status(200).send('Article-Inserted successfully');
+        submit.value='submitted';
       }
     });
   }
