@@ -1,4 +1,3 @@
-// Eg: coco98.imad.hasura-app.io/articles/article-one will result in article-one
 var currentArticleTitle = window.location.pathname.split('/')[2];
 
 function loadCommentForm () {
@@ -76,13 +75,21 @@ function loadComments () {
                 var commentsData = JSON.parse(this.responseText);
                 for (var i=0; i< commentsData.length; i++) {
                     var time = new Date(commentsData[i].timestamp);
-                    content += `<div  class="comment">
-                        <p class="text-primary glyphicon glyphicon-comment " > ${escapeHTML(commentsData[i].comment)}</p>
+                    content += `<br>
+                    <hr style="height:1px;border:none;color:#333;background-color:#333;" />
+                    <div class="row">
+                    <div class="col-sm-1">
+                    <div class="thumbnail">
+                    <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                    </div>
+                    </div>
 
-                        <div class="">
-                          <hr/>
-                          <h3 class="text-info" >  ${commentsData[i].username}</h3> <div class="glyphicon glyphicon-time "> ${time.toLocaleTimeString()} </div> on  ${time.toLocaleDateString()}
+                          <h3 >  ${commentsData[i].username}</h3> <div class="glyphicon glyphicon-time "> ${time.toLocaleTimeString()} </div> on  ${time.toLocaleDateString()}
+                          </div>
                         </div>
+                        <h3 class="text-info glyphicon glyphicon-comment
+                        "  > ${escapeHTML(commentsData[i].comment)}</h3>
+                          <br>
                     </div>`;
                 }
                 comments.innerHTML = content;
@@ -97,6 +104,5 @@ function loadComments () {
 }
 
 
-// The first thing to do is to check if the user is logged in!
 loadLogin();
 loadComments();
