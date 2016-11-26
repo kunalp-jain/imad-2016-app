@@ -120,8 +120,7 @@ app.get('/hash/:input', function(req, res) {
 
 
 app.post('/create-user', function (req, res) {
-    
-    var pool = new Pool(config);
+  /*  var pool = new Pool(config);
    var username = req.body.new_username1;
    var password = req.body.new_password1;
  //  return username;
@@ -138,7 +137,16 @@ app.post('/create-user', function (req, res) {
       } 
 
    }); 
-   res.send('user' + username);
+   res.send('user' + username); */
+   var pg = require("pg");
+
+var conString = "pg://db.imad.hasura-app.io:kunalp-jain@localhost:5432/kunalp";
+
+var client = new pg.Client(conString);
+client.connect();
+
+// client.query("CREATE TABLE IF NOT EXISTS emps(firstname varchar(64), lastname varchar(64))");
+ client.query("INSERT INTO user(username, password) values($1, $2)", ['Ronald', 'McDonald']);
 });
 
 app.post('/login', function (req, res) {
