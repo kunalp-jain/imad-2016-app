@@ -108,7 +108,7 @@ label{
    
    
     box-shadow: 10px 10px 5px #888888;}
-	.commentbox2 {padding-bottom:5%; margin-bottom:5%; width: 100%;
+	.commentbox2 {padding-bottom:5%; margin-bottom:5%;margin-top:5%;  width: 100%;
     
     border: 1px solid #888888;
     box-sizing: border-box;
