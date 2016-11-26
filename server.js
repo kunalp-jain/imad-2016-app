@@ -125,13 +125,14 @@ app.post('/create-user', function (req, res) {
   // res.send(password);
   // var salt = crypto.randomBytes(128).toString('hex');
    //var dbString = hash(password, salt);
-   pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, password], function (err, result) {
-      if (err) {
+   pool.query('INSERT INTO user (username, password) VALUES ($1, $2)', ['uma', 'devi'], function (err, result) {
+     /* if (err) {
           res.send('user inside');
           res.status(500).send(err.toString());
       } else {
           res.send('User successfully created: ' + username);
-      }
+      } */
+      res.send(result);
    }); 
 });
 
