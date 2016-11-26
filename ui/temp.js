@@ -1,4 +1,3 @@
-
 function loadnav(){
   document.getElementById('nav-bar').innerHTML=`
   <nav class="navbar navbar-inverse">
@@ -11,7 +10,7 @@ function loadnav(){
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/ui/Introduction">About me <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="/introduction">profile</a></li>
-            </ul>
+          </ul>
         </li>
       </ul>
     </div>
@@ -19,8 +18,6 @@ function loadnav(){
 `
 return;
 }
-
-
 function loadfooter(){
   document.getElementById('foot').innerHTML=`
         <div class="container row-footer ";>
@@ -36,8 +33,8 @@ function loadfooter(){
                 </div>
 	        <div class="col-xs-6 col-sm-5">
                     <h5>I live in Chennai </h5>
-                    <i class="fa fa-phone"></i>: 9840523023<br>
-                    <i class="fa fa-envelope"></i>: <a href="githubashutoshsoni@hasura-app.io">m.ashutoshsoni@gmail.com</a>
+                    <i class="fa fa-phone"></i> 9840523023<br>
+                    <i class="fa fa-envelope"></i>m.ashutoshsoni@gmail.com
                     </address>
                     </div>
                     <div class="col-xs-12 col-sm-4">
@@ -49,16 +46,15 @@ function loadfooter(){
                     </div>
 
                     </div>
-                    <p> made with<div class="fa fa-heart">by Ashutosh Soni</div></p>
 
 
                     </div>
+            <p class="text-center"> made with <i class="fa fa-heart"> by Ashutosh Soni</i></p>
 
                     `
 
                     return;
                   }
 
-      loadnav();
-
-      loadfooter();
+                  loadnav();
+                  loadfooter();
