@@ -205,9 +205,9 @@ function loadrules()
 {
   document.getElementById('rules').innerHTML=`<ol class="pull-left">
 
-    <li> you can write articles and get recognized.</li>
-    <li> You can Improve Your English.</li>
-    <li> Your articles can be read by friends if they Register on this site </li>
+    <li> You can write articles and get recognized.</li>
+    <li> You can not have the same title if another user has that title</li>
+    <li> Your articles can be read by friends if they register on this site </li>
     <li> Articles You write can be seen by anyone.</li>
         </ol>
 
