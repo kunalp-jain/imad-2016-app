@@ -1,12 +1,12 @@
 
 function loadLoginForm () {
     var loginHtml = `
-        <h2 >Login/Register to have your own article</h2>
-        <input class="form-control input-lg" type="text" id="username" placeholder="username" />
+        <h2 >Login/Register to write your own article</h2>
+        <input class="form-control input-lg" type="text" id="username" placeholder="username" /><br>
         <input  type="password" class="form-control input-lg" id="password" placeholder="password" />
         <br/><br/>
-        <input  type="submit" class="btn btn-primary btn-lg"  id="login_btn" value="Login" />
-        <input type="submit" class="btn btn-primary btn-lg" id="register_btn" value="Register" />
+        <input  type="submit" class="btn btn-primary btn-lg btn-block"  id="login_btn" value="Login" /><br>
+        <input type="submit" class="btn btn-primary btn-lg btn-block" id="register_btn" value="Register" />
         `;
     document.getElementById('login_area').innerHTML = loginHtml;
 
@@ -97,14 +97,16 @@ document.getElementById('wr-article').innerHTML=`
     <input type="text" id="article_title"  cols="30" placeholder="Enter your title here..."></textarea>
     <br/>
     <input type="text" id="article_heading" cols="30"  placeholder="Enter your heading here..."></textarea>
-    <br/>
+    <br>
     <input type="text" id="article_date" cols="10"  placeholder="yyyy-mm-dd..."></textarea>
+    <br>
+    <textarea id="article_content" rows="4" cols="70"  placeholder="Enter your content here..."></textarea>
+    <br>
     <br/>
-  <textarea id="article_content" rows="4" cols="70"  placeholder="Enter your content here..."></textarea>
-      <br/>
-    <br/>a
     <input class="btn btn-primary " type="submit" id="submit" value="Submit" />
+    <br>
 </div>
+<br>
     `;
     var submit =document.getElementById('submit');
     submit.onclick= function(){
@@ -180,6 +182,7 @@ function loadArticles () {
 
 
 // The first thing to do is to check if the user is logged in!
+
 function loadnav(){
   document.getElementById('nav-bar').innerHTML=`
   <nav class="navbar navbar-inverse">
@@ -191,26 +194,25 @@ function loadnav(){
         <li class="active"><a href="/">Home</a></li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/ui/Introduction">About me <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">profile</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
+            <li><a href="/introduction">profile</a></li>
+            </ul>
         </li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
       </ul>
     </div>
   </nav>
 `
 return;
 }
-
 function loadrules()
 {
   document.getElementById('rules').innerHTML=`<ol class="pull-left">
-    <li> you have to write an article</li>
-      <li> when you type an article you have to set your mood in the mood section</li>
-        <li> thats all :)</li>
+
+    <li> you can write articles and get recognized.</li>
+    <li> You can Improve Your English.</li>
+    <li> Your articles can be read by friends if they Register on this site as well.</li>
+    <li> Articles You write can be seen by anyone.</li>
         </ol>
+
   `
   return;
 }
@@ -223,7 +225,7 @@ function loadfooter(){
                     <h5>Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="/ui/Introduction">About me</li>
+                        <li><a href="/Introduction">About me</li>
 
                         <li><a href="index.html#">Contact</a></li>
                     </ul>
@@ -239,12 +241,17 @@ function loadfooter(){
                     <a href="https://www.facebook.com/narutosh.uzuoni"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
                     <a href="https://twitter.com/ashutoshsoni16"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>               </div>
                     <div class="col-xs-12">
-                    <p style="padding:10px;"></p>
 
-                    <p align-items="center">© Copyright 2015 Ristorante Con Fusion</p>
                     </div>
+
                     </div>
-                    </div>`
+                    <p> made with<div class="fa fa-heart">by Ashutosh Soni</div></p>
+
+
+                    </div>
+
+                    `
+
                     return;
                   }
 
