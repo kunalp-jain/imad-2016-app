@@ -35,15 +35,37 @@ function createTemplate (data) {
           <title>
               ${title}
           </title>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="viewport" content="width=device-width ,initial scale=1">
-           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+          <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-          <link href="/ui/style.css" rel="stylesheet" />
+
+        <link href="/ui/style.css" rel="stylesheet" />
 
       </head>
       <body>
           <div class="container">
+          <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="/">Blogging</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/ui/Introduction">About me <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/introduction">profile</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
               <div>
                   <a href="/">Home</a>
               </div>
@@ -68,6 +90,9 @@ function createTemplate (data) {
               </div>
 
           </div>
+          <footer>
+
+          </footer>
           <script type="text/javascript" src="/ui/article.js"></script>
       </body>
     </html>
