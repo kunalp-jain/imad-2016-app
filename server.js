@@ -119,10 +119,11 @@ app.get('/hash/:input', function(req, res) {
 });
 
 app.post('/create-user', function (req, res) {
+    res.send("inside user");
    // username, password
    // {"username": "tanmai", "password": "password"}
    // JSON
-   var username = req.body.new_username;
+   /*var username = req.body.new_username;
    var password = req.body.new_password;
    var salt = crypto.randomBytes(128).toString('hex');
    var dbString = hash(password, salt);
@@ -133,7 +134,7 @@ app.post('/create-user', function (req, res) {
       } else {
           res.send('User successfully created: ' + username);
       }
-   });
+   }); */
 });
 
 app.post('/login', function (req, res) {
