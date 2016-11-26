@@ -1,3 +1,4 @@
+
 #foot{
 margin-top: 30px;
 padding-top: 20px;
@@ -8,6 +9,22 @@ background-color:lightgray;
 }
 .img-right{
   float: right;
+}
+.bg-1 {
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+}
+.bg-2 {
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+}
+.bg-3 {
+    background-color: #0892d0;
+    color: #555555;
+}
+.container-fluid {
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 .social:hover {
      -webkit-transform: scale(1.1);
