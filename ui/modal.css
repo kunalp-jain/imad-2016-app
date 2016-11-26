@@ -97,7 +97,7 @@ label{
 
 .commentbox input{width:100%;height:100px; }
 .commentbox button{float:left;}
- .commentpicture img{height:100px;width:100px; border-radius:10px;}
+ .commentpicture img{height:90px;width:90px; border-radius:10px;}
  .commentpicture{background:#db3b2b; width:130px;border-radius:10px;}
  .commentpic img{height:70px;width:70px; border-radius:50%;}
  .commentbox1{padding-bottom:5%; margin-bottom:5%; width: 100%;
