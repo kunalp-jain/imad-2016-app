@@ -120,7 +120,16 @@ app.get('/hash/:input', function(req, res) {
 
 
 app.post('/create-user', function (req, res) {
-   var pool = new Pool(config);
+    var pg = require('pg');
+var conString = "postgres://kunalp-jain:db-kunalp-jain-12182@localhost:5432/kunalp-jain";
+var client = new pg.Client(conString);
+client.connect();
+client.query({
+    name: 'insert user',
+    text: "INSERT INTO user(username) values($1)",
+    values: ['George']
+});
+   /*var pool = new Pool(config);
    var username = req.body.new_username1;
    var password = req.body.new_password1;
   // var salt = crypto.randomBytes(128).toString('hex');
@@ -136,7 +145,7 @@ app.post('/create-user', function (req, res) {
       } 
 
    }); 
-  // res.send('user' + username); 
+  // res.send('user' + username); */
 });
 
 app.post('/login', function (req, res) {
