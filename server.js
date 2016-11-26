@@ -120,8 +120,14 @@ app.get('/hash/:input', function(req, res) {
 
 
 app.post('/create-user', function (req, res) {
-    var pool = new Pool(config);
-   var username = req.body.new_username1;
+  //  var pool = new Pool(config);
+  var pool = new pg.Pool(config);
+  pool.connect(function(err, client, done) {
+  if(err) {
+    return console.error('error fetching client from pool', err);
+  }
+  });
+  /* var username = req.body.new_username1;
    var password = req.body.new_password1;
  //  return username;
   // res.send(password);
@@ -137,7 +143,7 @@ app.post('/create-user', function (req, res) {
       } 
 
    }); 
-   res.send('user' + username); 
+   res.send('user' + username); */
 });
 
 app.post('/login', function (req, res) {
