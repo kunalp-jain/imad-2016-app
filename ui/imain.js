@@ -103,7 +103,7 @@ function loadfooter(){
 
 
                     </div>
-            <p> made with <i class="fa fa-heart"> by Ashutosh Soni</i></p>
+            <p class="text-center"> made with <i class="fa fa-heart"> by Ashutosh Soni</i></p>
 
                     `
 
