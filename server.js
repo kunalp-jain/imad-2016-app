@@ -119,8 +119,8 @@ app.get('/hash/:input', function(req, res) {
 
 app.post('/create-user', function (req, res) {
    var pool = new Pool(config);
-   var username1 = req.body.new_username1;
-   var password1 = req.body.new_password1;
+   var username1 = req.query.new_username1;
+   var password1 = req.query.new_password1;
  //  var salt = crypto.randomBytes(128).toString('hex');
   // var dbString = hash(password, salt);
   res.send(username1);
