@@ -209,7 +209,7 @@ function loadrules()
 
     <li> you can write articles and get recognized.</li>
     <li> You can Improve Your English.</li>
-    <li> Your articles can be read by friends if they Register on this site as well.</li>
+    <li> Your articles can be read by friends if they Register on this site </li>
     <li> Articles You write can be seen by anyone.</li>
         </ol>
 
