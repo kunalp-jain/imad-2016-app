@@ -87,8 +87,8 @@ function loadfooter(){
                 </div>
 	        <div class="col-xs-6 col-sm-5">
                     <h5>I live in Chennai </h5>
-                    <i class="fa fa-phone"></i>: 9840523023<br>
-                    <i class="fa fa-envelope"></i>:m.ashutoshsoni@gmail.com
+                    <i class="fa fa-phone"></i> 9840523023<br>
+                    <i class="fa fa-envelope"></i>m.ashutoshsoni@gmail.com
                     </address>
                     </div>
                     <div class="col-xs-12 col-sm-4">
