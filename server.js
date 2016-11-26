@@ -10,7 +10,7 @@ var config = {
     database: 'kunalp-jain',
     host: 'db.imad.hasura-app.io',
     port: '5432',
-    password: 'db-kunalp-jain-12182'
+    password: process.env.DB_PASSWORD
 }; 
 
 /*var config = {
