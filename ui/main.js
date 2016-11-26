@@ -100,8 +100,8 @@ document.getElementById('wr-article').innerHTML=`
     <br/>
     <input type="text" id="article_date" cols="10"  placeholder="yyyy-mm-dd..."></textarea>
     <br/>
-    <input type="text" id="article_content" cols="30"  placeholder="Enter your content here..."></textarea>
-    <br/>
+  <textarea id="article_content" rows="4" cols="70"  placeholder="Enter your content here..."></textarea>
+      <br/>
     <br/>a
     <input class="btn btn-primary " type="submit" id="submit" value="Submit" />
 </div>
