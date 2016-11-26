@@ -70,6 +70,8 @@ function loadLoginForm () {
         // Make the request
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
+        console.log(username);
+        console.log(password);
         request.open('POST', '/create-user', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));
@@ -181,22 +183,19 @@ function loadArticles () {
 
 // The first thing to do is to check if the user is logged in!
 
-
 function loadrules()
 {
   document.getElementById('rules').innerHTML=`<ol class="pull-left">
 
-    <li> You can write articles and get recognized.</li>
-    <li> You can not have the same title if another user has that title</li>
-    <li> Your articles can be read by friends if they register on this site </li>
+    <li> you can write articles and get recognized.</li>
+    <li> You can Improve Your English.</li>
+    <li> Your articles can be read by friends if they Register on this site as well.</li>
     <li> Articles You write can be seen by anyone.</li>
         </ol>
 
   `
   return;
 }
-
-
 loadrules();
 
 
