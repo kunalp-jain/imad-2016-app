@@ -5,23 +5,21 @@ var Pool = require('pg').Pool;
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-var pg = require('pg');
-/*var config = {
+var config = {
     user: 'kunalp-jain',
     database: 'kunalp-jain',
     host: 'db.imad.hasura-app.io',
     port: '5432',
     password: process.env.DB_PASSWORD
 };
-*/
 
-var config = {
+/*var config = {
     user: 'kunalp-jain',
     database: 'kunalp-jain',
     host: 'localhost',
     port: '5432',
     password: 'db-kunalp-jain-12182'
-};
+};*/
 
 var app = express();
 app.use(morgan('combined'));
@@ -120,28 +118,12 @@ app.get('/hash/:input', function(req, res) {
 
 
 app.post('/create-user', function (req, res) {
- //   var pg = require('pg');
-//var conString = "postgres://kunalp-jain:db-kunalp-jain-12182@localhost:5432/kunalp-jain";
-//var client = new pg.Client(conString);
-//client.connect();
-  /* client.query('INSERT INTO user (username, password) VALUES ($1, $2)', ['uma', 'devi'], function (err, result) {
-      if (err) {
-       //   res.send('user inside');
-          res.status(500).send(err.toString());
-      } else {
-          res.send('User successfully created');
-      } 
-
-   }); 
-   */
-
-   var pool1 = new Pool(config);
+   var pool = new Pool(config);
    //var username = req.body.new_username1;
    //var password = req.body.new_password1;
   // var salt = crypto.randomBytes(128).toString('hex');
    //var dbString = hash(password, salt);
-   res.send(pool1);
-   pool1.query('INSERT INTO user (username, password) VALUES ($1, $2)', ['uma', 'devi'], function (err, result) {
+   pool.query('INSERT INTO user (username, password) VALUES ($1, $2)', ['uma', 'devi'], function (err, result) {
       if (err) {
        //   res.send('user inside');
           res.status(500).send(err.toString());
