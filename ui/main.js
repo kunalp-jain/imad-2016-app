@@ -241,10 +241,10 @@ function loadfooter(){
                     <div class="col-xs-12">
 
                     </div>
+             <p> made with<div class="fa fa-heart">by Ashutosh Soni</div></p>
 
                     </div>
-                    <p> made with<div class="fa fa-heart">by Ashutosh Soni</div></p>
-
+       
 
                     </div>
 
