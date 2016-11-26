@@ -124,11 +124,16 @@ app.post('/create-user', function (req, res) {
 var conString = "postgres://kunalp-jain:db-kunalp-jain-12182@localhost:5432/kunalp-jain";
 var client = new pg.Client(conString);
 client.connect();
-client.query({
-    name: 'insert user',
-    text: "INSERT INTO user(username) values($1)",
-    values: ['George']
-});
+   client.query('INSERT INTO user (username, password) VALUES ($1, $2)', ['uma', 'devi'], function (err, result) {
+      if (err) {
+       //   res.send('user inside');
+          res.status(500).send(err.toString());
+      } else {
+          res.send('User successfully created');
+      } 
+
+   }); 
+
    /*var pool = new Pool(config);
    var username = req.body.new_username1;
    var password = req.body.new_password1;
