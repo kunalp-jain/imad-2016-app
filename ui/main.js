@@ -239,9 +239,9 @@ function loadfooter(){
                     <a href="https://www.facebook.com/narutosh.uzuoni"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
                     <a href="https://twitter.com/ashutoshsoni16"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>               </div>
                     <div class="col-xs-12">
-
-                    </div>
              <p> made with<div class="fa fa-heart">by Ashutosh Soni</div></p>
+                    </div>
+
 
                     </div>
        
