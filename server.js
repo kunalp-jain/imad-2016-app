@@ -5,21 +5,21 @@ var Pool = require('pg').Pool;
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-var config = {
+/*var config = {
     user: 'kunalp-jain',
     database: 'kunalp-jain',
     host: 'db.imad.hasura-app.io',
     port: '5432',
     password: process.env.DB_PASSWORD
-};
+}; */
 
-/*var config = {
+var config = {
     user: 'kunalp-jain',
     database: 'kunalp-jain',
     host: 'localhost',
     port: '5432',
     password: 'db-kunalp-jain-12182'
-};*/
+};
 
 var app = express();
 app.use(morgan('combined'));
