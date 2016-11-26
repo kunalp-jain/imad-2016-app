@@ -351,7 +351,7 @@ app.post('/submit-article',function(req,res){
     pool.query('insert into article (title,heading,date,content) values ($1,$2,$3,$4)',[req.body.title,req.body.heading,req.body.date,req.body.content],function(err,result){
       if(err){
         console.log(err);
-        res.status(500).send(err.tostring());
+        res.status(500).send(err.toString());
 
       }
       else{
