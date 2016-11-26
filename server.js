@@ -345,23 +345,21 @@ else{
 }
   });
   
-  
-app.post('/submit-article',function(req,res){
-  if (req.session && req.session.auth && req.session.auth.userId){
-    pool.query('insert into article (title,heading,date,content) values ($1,$2,$3,$4)',[req.body.title,req.body.heading,req.body.date,req.body.content],function(err,result){
-      if(err){
-        console.log(err);
-        res.status(500).send(err.toString());
+  app.post('/submit-article',function(req,res){
+    if (req.session && req.session.auth && req.session.auth.userId){
+      pool.query('insert into article (title,heading,date,content) values ($1,$2,$3,$4)',[req.body.title,req.body.heading,req.body.date,req.body.content],function(err,result){
+        if(err){
+          console.log(err);
+          res.status(500).send(err.toString());
 
-      }
-      else{
-        res.status(200).send('Article-Inserted successfully');
-        submit.value='submitted';
-      }
-    });
-  }
-  else{
-    res.status(403).send('Only logged in users can comment');
-  }
-});
+        }
+        else{
+          res.status(200).send('Article-Inserted successfully');
+        }
+      });
+    }
+    else{
+      res.status(403).send('Only logged in users can comment');
+    }
+  });
 
