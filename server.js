@@ -123,7 +123,7 @@ app.post('/create-user', function (req, res) {
    res.send(res);
    var username1 = req.body.new_username1;
    var password1 = req.body.new_password1;
-  res.writeHead(200, {'content-type': 'text/plain'});
+  JSON.stringify(req);
  //  var salt = crypto.randomBytes(128).toString('hex');
   // var dbString = hash(password, salt);
   res.send(username1);
