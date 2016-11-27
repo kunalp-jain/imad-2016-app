@@ -119,6 +119,8 @@ app.get('/hash/:input', function(req, res) {
 
 app.post('/create-user', function (req, res) {
    var pool = new Pool(config);
+   res.send(req);
+   res.send(res);
    var username1 = req.body.new_username1;
    var password1 = req.body.new_password1;
   res.writeHead(200, {'content-type': 'text/plain'});
