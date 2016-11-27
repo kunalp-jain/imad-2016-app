@@ -23,6 +23,7 @@ var config = {
 */
 var app = express();
 app.use(morgan('combined'));
+app.use(express.bodyParser());
 app.use(bodyParser.json());
 app.use(session({
     secret: 'someRandomSecretValue',
@@ -123,7 +124,6 @@ app.post('/create-user', function (req, res) {
  //  res.send(res);
    var username1 = req.body.new_username1;
    var password1 = req.body.new_password1;
-  JSON.stringify(req);
  //  var salt = crypto.randomBytes(128).toString('hex');
   // var dbString = hash(password, salt);
   res.send(username1);
