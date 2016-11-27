@@ -98,8 +98,6 @@ document.getElementById('wr-article').innerHTML=`
     <br/>
     <input type="text" id="article_heading" cols="30"  placeholder="Enter your heading here..."></textarea>
     <br>
-    <input type="text" id="article_date" cols="10"  placeholder="yyyy-mm-dd..."></textarea>
-    <br>
     <textarea id="article_content" rows="4" cols="70"  placeholder="Enter your content here..."></textarea>
     <br>
     <br/>
@@ -128,10 +126,9 @@ if(request.readyState===XMLHttpRequest.DONE)
 var title=document.getElementById('article_title').value;
 var heading=document.getElementById('article_heading').value;
 var content=document.getElementById('article_content').value;
-var date=document.getElementById('article_date').value;
 request.open('POST','/submit-article');
 request.setRequestHeader('Content-Type','application/json');
-request.send(JSON.stringify({title:title,heading:heading,content:content,date:date}));
+request.send(JSON.stringify({title:title,heading:heading,content:content}));
 submit.value='submitting wait...'
   };
 
