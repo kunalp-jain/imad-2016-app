@@ -12,14 +12,11 @@ var config = {
     port: '5432',
     password: 'db-kunalp-jain-12182'
 }; 
-
-
 var app = express();
 //extra for body parser
 var jsonParser = bodyParser.json();
 // create application/x-www-form-urlencoded parser 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
-
 
 app.use(morgan('combined'));
 //app.use(express.json());
@@ -130,9 +127,9 @@ app.post('/create-user', urlencodedParser, function (req, res) {
    var username = req.body.newusername;
    var password = req.body.newpassword;
      var salt = crypto.randomBytes(128).toString('hex');
-  // var dbString = hash(password, salt);
+   var dbString = hash(password, salt);
   //res.send(username1);
-  pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, password], function (err, result) {
+  pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
