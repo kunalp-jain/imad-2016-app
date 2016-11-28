@@ -129,8 +129,8 @@ app.post('/create-user', function (request, res) {
   // res.send(request.body.user.name);
 //   res.send(req);
  //  res.send(res);
-   var username1 = request.body.new_username;
-   res.send(username1);
+   //var username1 = request.body.new_username;
+ //  res.send(username1);
    res.send("executed");
    //res.send(JSON.stringify(request.body));
   // var password1 = req.body.new_password1;
