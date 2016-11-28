@@ -129,7 +129,8 @@ app.post('/create-user', function (request, res) {
 //   res.send(request.body.user.name);
 //   res.send(req);
  //  res.send(res);
-//   var username1 = req.body.new_username1;
+   var username1 = req.body.new_username1;
+   res.send(username1);
   // var password1 = req.body.new_password1;
  //  var salt = crypto.randomBytes(128).toString('hex');
   // var dbString = hash(password, salt);
