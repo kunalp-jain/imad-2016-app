@@ -25,11 +25,11 @@ var app = express();
 app.use(morgan('combined'));
 //app.use(express.bodyParser());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+/*app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
 app.use(express.json());       // to support JSON-encoded bodies
-app.use(express.urlencoded()); // to support URL-encoded bodies
+app.use(express.urlencoded()); // to support URL-encoded bodies */
 app.use(session({
     secret: 'someRandomSecretValue',
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
