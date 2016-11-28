@@ -120,6 +120,7 @@ app.get('/hash/:input', function(req, res) {
 
 app.post('/create-user', function (req, res) {
    var pool = new Pool(config);
+   res.send("inside");
 //   res.send(req);
  //  res.send(res);
    var username1 = req.body.new_username1;
@@ -127,7 +128,7 @@ app.post('/create-user', function (req, res) {
  //  var salt = crypto.randomBytes(128).toString('hex');
   // var dbString = hash(password, salt);
   res.send(username1);
-  pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username1, password1], function (err, result) {
+  /*pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username1, password1], function (err, result) {
       if (err) {
        //   res.send('user inside');
           res.status(500).send(err.toString());
@@ -136,7 +137,7 @@ app.post('/create-user', function (req, res) {
       } 
 
    }); 
-   res.send('user' + username1); 
+   res.send('user' + username1); */
 });
 
 app.post('/login', function (req, res) {
