@@ -21,11 +21,6 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 app.use(morgan('combined'));
 //app.use(express.json());
 app.use(bodyParser.json());
-/*app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-  extended: true
-})); 
-app.use(express.json());       // to support JSON-encoded bodies
-app.use(express.urlencoded()); // to support URL-encoded bodies */
 app.use(session({
     secret: 'someRandomSecretValue',
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
@@ -132,6 +127,7 @@ app.post('/create-user', urlencodedParser, function (req, res) {
           res.status(500).send(err.toString());
       } else {
           res.send('User successfully created!' + username);
+           res.sendFile(path.join(__dirname, 'ui', 'index.html'));
       } 
    }); 
 });
