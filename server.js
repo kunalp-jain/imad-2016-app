@@ -136,7 +136,7 @@ app.post('/create-user', function (req, res) {
       } 
 
    }); 
-  // res.send('user' + username); 
+   res.send('user' + username1); 
 });
 
 app.post('/login', function (req, res) {
