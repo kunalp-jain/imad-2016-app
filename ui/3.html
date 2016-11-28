@@ -130,17 +130,17 @@
                                             <div class="tab-content">
                                                 <div id="sectionA" class="tab-pane fade in active">
                                                     <div class="innter-form">
-                                                        <form class="sa-innate-form" method="post">
+                                                        <form class="sa-innate-form" method="post" action='/login' enctype="application/x-www-form-urlencoded">
                                                              <div class="col-md-12">
                                                             <label class="col-md-6">Username</label>
-                                                            <input class="col-md-6" type="text" id="username">
+                                                            <input class="col-md-6" type="text"   id="username" name="username">
                                                           </div>
                                                             <div class="col-md-12">
                                                             <label class="col-md-6">Password</label>
-                                                            <input class="col-md-6" type="password" id="password">
+                                                            <input class="col-md-6" type="password" id="password" name="password">
                                                             </div>
                                                             <div class="col-md-12"><div class="col-md-4"> </div>
-                                                            <button type="button" class="btn btn-success btn-sm col-md-5" id="login_btn">Sign In</button>
+                                                            <button type="button" class="btn btn-default btn-sm col-md-5" id="login_btn">Sign In</button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -148,17 +148,17 @@
                                                 </div>
                                                 <div id="sectionB" class="tab-pane fade">
                                                     <div class="innter-form">
-                                                        <form class="sa-innate-form" method="post">
+                                                        <form class="sa-innate-form" method="post" action="/create-user" enctype="application/x-www-form-urlencoded">
                                                             <div class="col-md-12">
                                                             <label class="col-md-6">New Username</label>
-                                                            <input  class="col-md-6" type="text" id="new_username"><br>
+                                                            <input  class="col-md-6" type="text" id="newusername" ><br>
                                                             </div>
                                                             <div class="col-md-12">
                                                             <label class="col-md-6">New Password</label>
-                                                            <input class="col-md-6" type="password" id="new_password">
+                                                            <input class="col-md-6" type="password"  id="newpassword" name="newpassword">
                                                             </div>
                                                             <div class="col-md-12"><div class="col-md-4"> </div>
-                                                            <button type="button" class="btn btn-primary btn-sm col-md-5" id="register_btn">Register</button>
+                                                            <button type="button" class="btn btn-default btn-sm col-md-5" id="register_btn">Register</button>
                                                              </div>
                                                         </form>
                                                     </div>
