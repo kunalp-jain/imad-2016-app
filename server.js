@@ -125,7 +125,6 @@ app.get('/hash/:input', function(req, res) {
 
 app.post('/create-user', function (request, res) {
    var pool = new Pool(config);
-    res.setHeader('Content-Type', 'application/json');
    res.send("inside");
 //   res.send(request.body.user.name);
 //   res.send(req);
