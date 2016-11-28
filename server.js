@@ -23,7 +23,7 @@ var config = {
 */
 var app = express();
 app.use(morgan('combined'));
-app.use(express.json());
+//app.use(express.json());
 app.use(bodyParser.json());
 /*app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
