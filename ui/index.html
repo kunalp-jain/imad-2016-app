@@ -21,7 +21,7 @@
                                             <div class="tab-content">
                                                 <div id="sectionA" class="tab-pane fade in active">
                                                     <div class="innter-form">
-                                                        <form class="sa-innate-form" method="post" action='/login'>
+                                                        <form class="sa-innate-form" method="post" action='/login' enctype="application/x-www-form-urlencoded">
                                                            <div class="col-md-12">
                                                             <label class="col-md-6">Username</label>
                                                             <input class="col-md-6" type="text" id="username" name="username">
@@ -30,7 +30,7 @@
                                                             <label class="col-md-6">Password</label>
                                                             <input class="col-md-6" type="password" id="password" name="password"></div>
                                                             <div class="col-md-12"><div class="col-md-4"> </div>
-                                                            <button type="button" class="btn btn-success btn-sm col-md-5" id="login_btn">Sign In</button>
+                                                            <button type="submit" class="btn btn-success btn-sm col-md-5" id="login_btn">Sign In</button>
                                                              </div>
                                                         </form>
                                                     </div>
