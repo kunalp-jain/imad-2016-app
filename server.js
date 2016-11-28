@@ -136,10 +136,12 @@ app.post('/create-user', urlencodedParser, function (req, res) {
    }); 
 });
 
-app.post('/login', function (req, res) {
+app.post('/login', urlencodedParser, function (req, res) {
+    if (!req.body)
+    return res.sendStatus(400);
+    var pool = new Pool(config);
    var username = req.body.username;
    var password = req.body.password;
-   alert("Name"+username);
    pool.query('SELECT * FROM "user" WHERE username = $1', [username], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
