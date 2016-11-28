@@ -13,15 +13,14 @@ var config = {
     password: 'db-kunalp-jain-12182'
 }; 
 
-/*var config = {
-    user: 'kunalp-jain',
-    database: 'kunalp-jain',
-    host: 'localhost',
-    port: '5432',
-    password: 'db-kunalp-jain-12182'
-};
-*/
+
 var app = express();
+//extra for body parser
+var jsonParser = bodyParser.json();
+// create application/x-www-form-urlencoded parser 
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+
 app.use(morgan('combined'));
 //app.use(express.json());
 app.use(bodyParser.json());
@@ -123,8 +122,11 @@ app.get('/hash/:input', function(req, res) {
 });
 
 
-app.post('/create-user', function (request, res) {
-   var pool = new Pool(config);
+app.post('/create-user', urlencodedParser, function (request, res) {
+     if (!req.body)
+    return res.sendStatus(400);
+     res.send('welcome, ' + req.body.username);
+  /* var pool = new Pool(config);
   // res.send("inside");
   // res.send(request.body.user.name);
 //   res.send(req);
@@ -137,7 +139,7 @@ app.post('/create-user', function (request, res) {
  //  var salt = crypto.randomBytes(128).toString('hex');
   // var dbString = hash(password, salt);
   //res.send(username1);
-  /*pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username1, password1], function (err, result) {
+  pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username1, password1], function (err, result) {
       if (err) {
        //   res.send('user inside');
           res.status(500).send(err.toString());
