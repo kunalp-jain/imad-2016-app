@@ -126,11 +126,11 @@ app.get('/hash/:input', function(req, res) {
 app.post('/create-user', function (request, res) {
    var pool = new Pool(config);
   // res.send("inside");
-   res.send(request.body.user.name);
+  // res.send(request.body.user.name);
 //   res.send(req);
  //  res.send(res);
    var username1 = request.body.new_username;
-   //res.send(username1);
+   res.send(username1);
    res.send("executed");
    //res.send(JSON.stringify(request.body));
   // var password1 = req.body.new_password1;
