@@ -122,7 +122,6 @@ app.get('/hash/:input', function(req, res) {
 app.post('/create-user', urlencodedParser, function (req, res) {
      if (!req.body)
     return res.sendStatus(400);
-     res.send('welcome, ' + req.body.newusername);
      var pool = new Pool(config);
    var username = req.body.newusername;
    var password = req.body.newpassword;
