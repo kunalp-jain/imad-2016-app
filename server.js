@@ -18,7 +18,7 @@ var app = express();
 //extra for body parser
 var jsonParser = bodyParser.json();
 // create application/x-www-form-urlencoded parser 
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 
 app.use(morgan('combined'));
