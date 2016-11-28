@@ -122,19 +122,17 @@ app.get('/hash/:input', function(req, res) {
 app.post('/create-user', urlencodedParser, function (req, res) {
      if (!req.body)
     return res.sendStatus(400);
-     var pool = new Pool(config);
-   var username = req.body.newusername;
-   var password = req.body.newpassword;
-     var salt = crypto.randomBytes(128).toString('hex');
-   var dbString = hash(password, salt);
-  //res.send(username1);
-  pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
+    var pool = new Pool(config);
+    var username = req.body.newusername;
+    var password = req.body.newpassword;
+    var salt = crypto.randomBytes(128).toString('hex');
+    var dbString = hash(password, salt);
+    pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
           res.send('User successfully created!' + username);
       } 
-
    }); 
 });
 
