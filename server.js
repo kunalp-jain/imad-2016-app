@@ -126,29 +126,20 @@ app.post('/create-user', urlencodedParser, function (req, res) {
      if (!req.body)
     return res.sendStatus(400);
      res.send('welcome, ' + req.body.newusername);
-  /* var pool = new Pool(config);
-  // res.send("inside");
-  // res.send(request.body.user.name);
-//   res.send(req);
- //  res.send(res);
-   var username1 = request.body.new_username;
-   res.send(username1);
-   res.send("executed");
-   //res.send(JSON.stringify(request.body));
-  // var password1 = req.body.new_password1;
- //  var salt = crypto.randomBytes(128).toString('hex');
+     var pool = new Pool(config);
+   var username = req.body.newusername;
+   var password = req.body.newpassword;
+     var salt = crypto.randomBytes(128).toString('hex');
   // var dbString = hash(password, salt);
   //res.send(username1);
-  pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username1, password1], function (err, result) {
+  pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, password], function (err, result) {
       if (err) {
-       //   res.send('user inside');
           res.status(500).send(err.toString());
       } else {
-          res.send('User successfully created!' + username1);
+          res.send('User successfully created!' + username);
       } 
 
    }); 
-   res.send('user' + username1); */
 });
 
 app.post('/login', function (req, res) {
