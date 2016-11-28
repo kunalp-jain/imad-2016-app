@@ -16,41 +16,33 @@
             <link href="ui/modal.css" rel="stylesheet">
         </head>
         <body>
-            <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+		 <div class="container">
+            <nav class="navbar navbar-default  navbar-fixed-top">
+                		
                 <div class="container-fluid">
                     <div class="navbar-header page-scroll">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <i class="fa fa-bars"></i>
-                        </button>
                       
+                        
+					
+					
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>    <i class="fa fa-bars"></i>
+                        </button>
+                      <a class="" href="/" style="" > 	 <img src="ui/logo1.jpg" /></a>
                     </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                             <li>
-                                <a href="/">Home</a>
-								
-                            </li>
-							<li>
-                                <a href="/blog">Blog</a>
+                        <ul class="nav navbar-nav navbar-right" >
+                           
+                                <a id="loginnavbar" data-toggle="modal" data-target="#login-modal" href="#" >Login/Register</a>
                             </li>
                             <li>
-                                <a href="/about">About</a>
+                                <a id="logoutnavbar" onclick="logout()" href="">Logout</a>
                             </li>
-                            <li>
-                                <a href="/contact">Contact</a>
-                            </li>
-                            <li>
-                                <a id="loginnavbar" data-toggle="modal" data-target="#login-modal" href="#">Login/Register</a>
-                            </li>
-                            <li>
-                              <a id="logoutnavbar" onclick="logout()" href="">Logout</a>
-                          </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            <header class="intro-header" style="margin-bottom:24px;">
+            <header class="intro-header">
                <div class="col-md-10-wallet">
                     <div class="panel panel-default">
                       <div class="panel-body green">
@@ -62,29 +54,41 @@
                         </div>
                    </div>
             </header>
-            <article>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2 col-md-12 col-md-offset-1 pagehead" style="margin:0%" > 
+   
+              
+                    <div class="row" style="padding-left:10%">
+                        <div class="col-md-10"   > 
                         
              <h1 class="page-header">
                Jainism  Ethics 
                  </h1>
                         </div>
-                        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"> 
+                        <div class=" col-md-10 "> 
 						
-                          <p class="post-meta">					
-                        &nbsp;  &nbsp; Jainism  traditionally known as Jain Dharma, is an ancient Indian religion
-						 belonging to the srama?a tradition. The central tenet is non-violence and love towards all living beings.
-						 The three main principles of Jainism are ahimsa (non-violence), anekantavada (non-absolutism) and aparigraha 
-						 (non-possessiveness). Followers of Jainism take five main vows: ahimsa (non-violence), satya (not lying),
-						 asteya (not stealing), brahmacharya (chastity) and aparigraha (non-attachment). Jain monks and nuns observe
-						 these vows absolutely whereas householders (sravakas) observe them within their practical limitations. 
-						 Self-discipline and asceticism are thus major focuses of Jainism. Notably, Mahatma Gandhi was greatly
-						 influenced by Jainism and adopted many Jain principles in his life
+                         				
+                      
+  						 <p class="post-meta fontfamily">	 
+		 				
+    <b>Ahimsa</b>  Ahimsa means nonviolence or non-injury. The first major vow taken by Jains is to love and cause no harm to other
+	living beings. It involves minimizing intentional and unintentional harm to other living creatures by actions, speech or thoughts.
+	The vow of ahiṃsā is considered the foremost among the 'five vows of Jainism'.<br> 	
+<div class=" col-md-12 "> 	
+	<img src="ui/22.png" height="300" width="400" />
+	</div>
+   <b> Satya:</b> Satya means truth. This vow is to always speak the truth. Given that nonviolence has priority,
+	other principles yield to it whenever they	conflict: in a situation where speaking truth could lead to violence,
+	silence may be observed.<br>
+  <b>  Asteya or Achaurya:</b> Asteya means not stealing. Jains should not take anything that is not willingly offered.
+	The five transgression of this vow as mentioned in the Tattvārthsūtra are: "Prompting another to steal, receiving stolen goods, 
+	underbuying in a disordered state, using false weights and measures, and deceiving others with artificial or imitation goods".<br>
+   <b> Brahmacharya:</b> Brahmacharya means chastity for laymen and celibacy for Jain monks and nuns. This requires the exercise of control
+	over the senses to control indulgence in sexual activity.<br>
+ <b>   Aparigraha:</b> Aparigraha means non-possessiveness. This includes non-materialism and non-attachment to objects, places 
+ and people. Jain monks and nuns completely renounce property and social relations.
+
 					
                         </p>	
-<hr><br>
+<br>
 
 
 
@@ -94,9 +98,9 @@
                         </div>
                     </div>
                 </div>
-            </article>
-            <br><br>
-            <hr>
+        
+          
+    
             
                  
                 
@@ -199,7 +203,7 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                <hr>
+       
                 <footer>
                     <div class="row">
                         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
