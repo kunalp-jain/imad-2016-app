@@ -125,7 +125,7 @@ app.get('/hash/:input', function(req, res) {
 app.post('/create-user', urlencodedParser, function (req, res) {
      if (!req.body)
     return res.sendStatus(400);
-     res.send('welcome, ' + req.body.username);
+     res.send('welcome, ' + req.body.newusername);
   /* var pool = new Pool(config);
   // res.send("inside");
   // res.send(request.body.user.name);
