@@ -132,7 +132,7 @@ app.post('/create-user', function (req, res) {
        //   res.send('user inside');
           res.status(500).send(err.toString());
       } else {
-          res.send('User successfully created!' +username1);
+          res.send('User successfully created!' + username1);
       } 
 
    }); 
