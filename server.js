@@ -76,7 +76,7 @@ function createTemplate (data) {
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/login', function (req, res) {
+app.get('/loginpage', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'login.html'));
 });
 app.get('/blog', function (req, res) {
