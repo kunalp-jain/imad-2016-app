@@ -132,7 +132,7 @@ app.post('/create-user', urlencodedParser, function (req, res) {
          
           //res.send('User successfully created!' + username);
          //console.log("Hello World");
-         //  res.sendFile(path.join(__dirname, 'ui', 'login.html'));
+         res.sendFile(path.join(__dirname, 'ui', 'login.html'));
       } 
    }); 
 });
@@ -162,8 +162,8 @@ app.post('/login', urlencodedParser, function (req, res) {
                 // internally, on the server side, it maps the session id to an object
                 // { auth: {userId }}
                 
-                res.send('credentials correct!');
-                
+             //   res.send('credentials correct!');
+                  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
               } else {
                 res.status(403).send('username/password is invalid');
               }
