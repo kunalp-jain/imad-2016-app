@@ -197,6 +197,7 @@ body{
 footer{
     bottom:0px;
     background:white;
+    	height:60px;
 }
 /*---------rework---------*/
 .post-meta img{padding-bottom:.5%;border-radius:10px; }
