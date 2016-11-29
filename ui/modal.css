@@ -35,6 +35,7 @@
   border: none !important;
   border-radius:none !important;
   font-size:18px;
+  text-align:center;
 }
 .sa-innate-form input[type=text], input[type=password], input[type=file], textarea, select, email{
   font-size:13px;
