@@ -126,8 +126,8 @@ app.post('/create-user', urlencodedParser, function (req, res) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
-         // res.send('User successfully created!' + username);
-         console.log("Hello World");
+          res.send('User successfully created!' + username);
+         //console.log("Hello World");
            res.sendFile(path.join(__dirname, 'ui', 'index.html'));
       } 
    }); 
