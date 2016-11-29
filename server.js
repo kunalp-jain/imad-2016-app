@@ -129,9 +129,14 @@ app.post('/create-user', urlencodedParser, function (req, res) {
           res.status(500).send(err.toString());
       } 
       else {
-          res.send('User successfully created!' + username);
+          var popupS = require('popups');
+          popupS.alert({
+    title:   'I am an',
+    content: 'Alert'
+});
+          //res.send('User successfully created!' + username);
          //console.log("Hello World");
-           res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+         //  res.sendFile(path.join(__dirname, 'ui', 'login.html'));
       } 
    }); 
 });
